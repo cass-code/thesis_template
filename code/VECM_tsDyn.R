@@ -6,5 +6,5 @@ VECM_tsDyn <- function(dset){
   summary_vecm <- summary(model)
   summary_vecm
   # Summarise the regression results and return them
-  return(model)
+  return(summary_vecm)
 }

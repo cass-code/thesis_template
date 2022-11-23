@@ -8,6 +8,8 @@
 
 ## Stationarity
 
+
+
 <!-- Reading in the data -->
 
 ```{r readingData, echo=FALSE, warning=FALSE, message=FALSE}
@@ -28,24 +30,33 @@ colnames(vecm_data)[12] = "log_REAL"
 
 ## VECM
 
-```{r VecmResults, echo=FALSE, warning=FALSE, message=FALSE}
-library(tidyverse)
-library(dplyr)
-library(broom)
+```{r VecmResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/time_series_data.R")
+dset <- time_series_data(vecm_data)
+
+source("code/vecm_tsDyn.R")
+vecm2 <- VECM_tsDyn(dset)
+source("code/tidy_vecm_results.R")
+tidy_vecm <- tidy_vecm_results(vecm2)
+vecm_shortrun <- tidy_vecm[[1]]
+vecm_longrun <- tidy_vecm[[2]]
+
 library(huxtable)
 
-source("code/VECM_vars.R")
+ht <- hux(vecm_shortrun
+      ) %>% huxtable::add_rownames()
 
-vecm_dataframe <- data.frame(vecm_data$log_QDP, vecm_data$log_PRATIO,vecm_data$log_REAL) 
-vecm_results <- VECM_vars(vecm_dataframe) 
-huxreg(vecm_results)
+bold(ht)[1,]           <- TRUE
+bottom_border(ht)[1,]  <- 0.4
+align(ht)[,2]          <- "right"
+right_padding(ht)      <- 10
+left_padding(ht)       <- 10
+width(ht)              <- 0.35
+number_format(ht)      <- 2
+
+ht
 
 
-source("code/vecm_testing.R")
-vecm2 <- vecm_testing(vecm_dataframe)
-vecm2results <- vecm2$coefficients %>% tidy() %>% as_tibble()
-class(vecm2results)
-huxreg(vecm2results)
 ```
 
 

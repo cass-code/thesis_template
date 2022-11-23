@@ -8,6 +8,6 @@ time_series_data <- function(vecm_data){
   PRATIO <- ts(vecm_data$log_PRATIO, start = c(2012, 1), frequency = 4)
   REAL <- ts(vecm_data$log_REAL, start = c(2012, 1), frequency = 4)
   
-  dset <- cbind(QDP, PRATIO)
+  dset <- cbind(QDP, PRATIO, REAL)
   return(dset)
 }
