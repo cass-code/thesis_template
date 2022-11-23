@@ -1,0 +1,70 @@
+---
+output: 
+  pdf_document:
+    citation_package: natbib
+    template: ustemplate2.tex
+    toc: true
+    toc_depth: 3
+    number_sections: true
+    keep_tex: false
+    fig_caption: true
+bibliography: mybib.bib
+documentclass: memoir
+lang: afrikaans, english
+fontsize: 12pt
+papersize: letter
+classoption: oneside, openany
+margin-ratio: goldenblock
+title: "This is the title of my thesis"
+titel: "Hierdie is die titel van my tesis"
+author: Wihan Marais
+author-short: W.\ Marais
+degree-short: MCom (Economics)
+degree: Master in Economics
+graad-short: MCom (Ekonomie)
+graad: Magister in Ekonomie
+address: yes # comment out to remove address in abstract
+faculty: Faculty of Economic and Management Sciences
+fakulteit: Fakulteit Ekonomiese en Bestuurswetenskappe
+supervisor: Prof.\ W.\ H. Boshoff
+year: 2023
+month: 4
+abstract: abstract.Rmd
+acknowledgements: acknowledgements.Rmd
+lot: true
+lof: true
+# nomenclature: nomenclature.Rmd
+# loa: loa.Rmd
+header-includes:
+- \usepackage{subfig}
+# - \usepackage{float}
+# - \usepackage{floatrow}
+# - \floatsetup[figure]{capposition=top}
+# - \floatsetup[table]{capposition=top} 
+# - \usepackage{caption}
+---
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, include= F}
+
+rm(list = ls())
+gc()
+
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo=FALSE, 
+                      fig.width = 4.5, fig.height = 2.5, fig.align = 'center',
+                      fig.ext = 'png', dev = 'png', dpi = 600) # adjust dpi for image quality/knit speed
+
+library(pacman)
+pacman::p_load(tidyverse, glue, huxtable, gridExtra, wesanderson, ggrepel, tsDyn, dplyr) # can load all packages here - don't need to include them separately in the other scripts and RMD files 
+
+```
+
+```{r child = 'body.Rmd'}
+```
+
+\appendix
+\appendixpage
+
+```{r child = 'appendix.Rmd'}
+```
+
+\clearpage

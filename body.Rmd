@@ -1,0 +1,67 @@
+# Introduction
+
+# Literature Review
+
+# Data
+
+# Methodology
+
+## Stationarity
+
+<!-- Reading in the data -->
+
+```{r readingData, echo=FALSE, warning=FALSE, message=FALSE}
+# read in the data - add the dataset's path to filePath
+library(readxl)
+dataset <- read_excel("data/Data.xlsx", sheet = "data1")
+incomeData <- read_excel("data/Data.xlsx", sheet = "real") #importing real income
+source("code/data_clean.R")
+log_data <- data_clean(dataset)
+source("code/interpolate.R") #interpolate real income to monthly intervals and clean and log income data
+monthly_income <- interpolate(incomeData)
+vecm_data <- log_data %>% mutate(monthly_income$log_REAL, .before=log_YR)
+colnames(vecm_data)[12] = "log_REAL"
+```
+
+
+## Cointegration 
+
+## VECM
+
+```{r VecmResults, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(dplyr)
+library(broom)
+library(huxtable)
+
+source("code/VECM_vars.R")
+
+vecm_dataframe <- data.frame(vecm_data$log_QDP, vecm_data$log_PRATIO,vecm_data$log_REAL) 
+vecm_results <- VECM_vars(vecm_dataframe) 
+huxreg(vecm_results)
+
+
+source("code/vecm_testing.R")
+vecm2 <- vecm_testing(vecm_dataframe)
+vecm2results <- vecm2$coefficients %>% tidy() %>% as_tibble()
+class(vecm2results)
+huxreg(vecm2results)
+```
+
+
+## Residual Testing
+
+# Analysis
+
+# Conclusion \label{sec:conclusion}
+
+
+<!-- capital C fro referencing and then check  -->
+<!-- \Cref{theoriginallabel} for tables, sections, tables and writes out e.g. "Table 1" - note capital "C" in \Cref-->
+
+```{r}
+# e.g.: source("images/su_logo.jpg") # if you want to source something - quick shortcut is ctrl space and that brings up a list of files also predictive text
+```
+
+
+

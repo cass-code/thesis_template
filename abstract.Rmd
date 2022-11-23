@@ -1,0 +1,16 @@
+\begin{abstract}[english]
+\noindent This is the first paragraph of my English abstract. You need to use \textbf{Latex syntax} in this environment. E.g. \cite{boshoff20} and Tschantz en Froeb \citeyearpar{app19}.
+
+This is the second paragraph of my English abstract.
+
+\end{abstract}
+
+% this is a comment %
+
+
+%\begin{abstract}[afrikaans] 
+%\noindent This is the first paragraph of my Afrikaans abstract.
+
+%This is the second paragraph of my Afrikaans abstract.
+
+%\end{abstract}
