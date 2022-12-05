@@ -1,16 +1,13 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Introduction
 
 # Literature Review
 
 # Data
-
-# Methodology
-
-## Stationarity
-
-
-
-<!-- Reading in the data -->
 
 ```{r readingData, echo=FALSE, warning=FALSE, message=FALSE}
 # read in the data - add the dataset's path to filePath
@@ -25,10 +22,50 @@ vecm_data <- log_data %>% mutate(monthly_income$log_REAL, .before=log_YR)
 colnames(vecm_data)[12] = "log_REAL"
 ```
 
+```{r graphs, echo=FALSE, warning=FALSE, message=FALSE, fig.align="center", out.width="100%"}
+source("code/time_series_plots.R")
+time_series_plots(log_data)
+```
 
-## Cointegration 
+# Methodology \label{sec:methodology}
 
-## VECM
+
+## Stationarity \label{sec:stationarity}
+```{r stationarityResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/time_series_data.R")
+dset <- time_series_data(vecm_data)
+
+source("code/adf_test.R")
+dickeyFuller <- adf_test(dset)
+library(broom)
+
+Qadftest <- broom::tidy(dickeyFuller[[1]])
+Padftest <- broom::tidy(dickeyFuller[[2]])
+Yadftest <- broom::tidy(dickeyFuller[[3]])
+
+dickeyTest <- as.data.frame(bind_rows(Qadftest, Padftest, Yadftest))
+rownames(dickeyTest) = c("Quantity legal cigarettes", "Price ratio", "Disposable income")
+
+library(huxtable)
+
+ht <- hux(dickeyTest
+      ) %>% huxtable::add_rownames()
+
+bold(ht)[1,]           <- TRUE
+bottom_border(ht)[1,]  <- 0.4
+align(ht)[,2]          <- "right"
+right_padding(ht)      <- 2
+left_padding(ht)       <- 2
+width(ht)              <- 1
+number_format(ht)      <- 2
+
+ht
+```
+
+
+## Cointegration \label{sec:cointegration}
+
+## VECM \label{sec:vecm}
 
 ```{r VecmResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
 source("code/time_series_data.R")
@@ -43,22 +80,32 @@ vecm_longrun <- tidy_vecm[[2]]
 
 library(huxtable)
 
+ht <- hux(vecm_longrun
+      ) %>% huxtable::add_rownames()
+
+bold(ht)[1,]           <- TRUE
+bottom_border(ht)[1,]  <- 0.4
+align(ht)[,2]          <- "right"
+right_padding(ht)      <- 2
+left_padding(ht)       <- 2
+width(ht)              <- 1
+number_format(ht)      <- 2
+
+ht
+
 ht <- hux(vecm_shortrun
       ) %>% huxtable::add_rownames()
 
 bold(ht)[1,]           <- TRUE
 bottom_border(ht)[1,]  <- 0.4
 align(ht)[,2]          <- "right"
-right_padding(ht)      <- 10
-left_padding(ht)       <- 10
-width(ht)              <- 0.35
+right_padding(ht)      <- 2
+left_padding(ht)       <- 2
+width(ht)              <- 1
 number_format(ht)      <- 2
 
 ht
-
-
 ```
-
 
 ## Residual Testing
 
