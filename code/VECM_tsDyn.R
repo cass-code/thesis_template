@@ -1,6 +1,6 @@
-VECM_tsDyn <- function(dset){
+VECM_tsDyn <- function(dset1){
   
-  model <- tsDyn::VECM(dset, lag = 1, r=1, estim = "ML")
+  model <- tsDyn::VECM(dset1, lag = 1, r=1, estim = "ML")
   # Run the vecm regressions with 2 lags and 1 cointegrating relationship
   # Estimate using the Maximum Likelihood method
   summary_vecm <- summary(model)

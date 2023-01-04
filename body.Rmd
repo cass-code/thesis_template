@@ -1,13 +1,25 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
+
+<!-- --- -->
+<!-- output: -->
+<!--    pdf_document -->
+<!-- --- -->
+
 # Introduction
 
-# Literature Review
+This study examines the relationship between the legal and illegal tobacco markets in South Africa. Section \ref{data} discusses the data used and how it was cleaned. Section \ref{methodology} explains the methodology, where a VECM model is presented. The final section details discussion points (\ref{analysis}). The appendix contains the full model outputs. 
 
-# Data
+ 
+
+# The tobacco industry in South Arica
+
+The concern around the illict tobacco market twofold. Firstly, access to cheaper cigarettes  
+
+
+
+
+# Data \label{data}
+
+The sample period for this study runs from January 2012 to March 2020. Monthly data is used such that there are 99 observation points for each variable in the data set. One of the advantages of using monthly data rather than annual data is that it allows for more degrees of freedom. The data used includes figures for the prices and volumes of cigarettes in South Africa, tobacco excise duties, VAT, and disposable income. To prepare the data for analysis the most popular price category (MPPC) was identified as the 20-cigarette pack. Then a weighted average of before-tax 20-pack prices was used as a base price. The excise duty per 20's pack and VAT and were then added to the base price to calculate the price of licit cigarettes. The licit, illicit and disposable income amounts were adjusted for inflation, taking December 2016 as the base month and year. All of the variables have been transformed into log form.
 
 ```{r readingData, echo=FALSE, warning=FALSE, message=FALSE}
 # read in the data - add the dataset's path to filePath
@@ -22,15 +34,18 @@ vecm_data <- log_data %>% mutate(monthly_income$log_REAL, .before=log_YR)
 colnames(vecm_data)[12] = "log_REAL"
 ```
 
-```{r graphs, echo=FALSE, warning=FALSE, message=FALSE, fig.align="center", out.width="100%"}
+```{r graphs, fig.height = 4.5, echo=FALSE, warning=FALSE, message=FALSE}
 source("code/time_series_plots.R")
 time_series_plots(log_data)
 ```
 
-# Methodology \label{sec:methodology}
+# Methodology \label{methodology}
 
 
-## Stationarity \label{sec:stationarity}
+## Stationarity \label{stationarity}
+
+Running the ADF tests.
+
 ```{r stationarityResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
 source("code/time_series_data.R")
 dset <- time_series_data(vecm_data)
@@ -48,24 +63,35 @@ rownames(dickeyTest) = c("Quantity legal cigarettes", "Price ratio", "Disposable
 
 library(huxtable)
 
-ht <- hux(dickeyTest
-      ) %>% huxtable::add_rownames()
+# ht <- hux(dickeyTest
+#       ) %>% huxtable::add_rownames()
 
-bold(ht)[1,]           <- TRUE
-bottom_border(ht)[1,]  <- 0.4
-align(ht)[,2]          <- "right"
-right_padding(ht)      <- 2
-left_padding(ht)       <- 2
-width(ht)              <- 1
-number_format(ht)      <- 2
+dickeyTest %>% 
+  rename("Statistic" = statistic) %>% 
+  as_hux() %>% 
+  theme_article() %>% 
+  set_font_size(10) %>% 
+  # set_width(1) %>% 
+  set_caption("This is my caption \\label{tab:adf}") %>% 
+  set_all_padding(2) %>% 
+  set_number_format(col = 2, value = 4)
 
-ht
+# bold(ht)[1,]           <- TRUE
+# bottom_border(ht)[1,]  <- 0.4
+# align(ht)[,2]          <- "right"
+# right_padding(ht)      <- 2
+# left_padding(ht)       <- 2
+# width(ht)              <- 1
+# number_format(ht)      <- 2
+
+# ht
 ```
 
+## Cointegration \label{cointegration}
 
-## Cointegration \label{sec:cointegration}
+## VECM \label{vecm}
 
-## VECM \label{sec:vecm}
+The price ratio captures a relative change of the legal price compared to the illicit price. If the ratio shrinks, it indicates that the cost of legal cigarettes decreased relative to the cost of illicit cigarettes. There should be a negative long run relationship between the price ratio and the quantity of legal cigarettes. There should be a positive sign for the cointegrating relationship, which there is. The coefficient for the real disposable income variable should be negative for the long-run relationship (so that the reverse sign is positive); whereas the sign is positive in the Vecm results below.
 
 ```{r VecmResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
 source("code/time_series_data.R")
@@ -80,7 +106,67 @@ vecm_longrun <- tidy_vecm[[2]]
 
 library(huxtable)
 
-ht <- hux(vecm_longrun
+# ht <- hux(vecm_longrun
+#       ) %>% huxtable::add_rownames()
+# 
+# bold(ht)[1,]           <- TRUE
+# bottom_border(ht)[1,]  <- 0.4
+# align(ht)[,2]          <- "right"
+# right_padding(ht)      <- 2
+# left_padding(ht)       <- 2
+# width(ht)              <- 0.9
+# number_format(ht)      <- 2
+# 
+# ht
+vecm_longrun %>% 
+as_hux() %>% 
+  theme_article() %>% 
+  set_font_size(10) %>% 
+  # set_width(1) %>% 
+  set_caption("This is my caption") %>% 
+  set_all_padding(2) 
+  # set_number_format(col = 2, value = 4)
+
+vecm_shortrun %>% 
+as_hux() %>% 
+  theme_article() %>% 
+  set_font_size(10) %>% 
+  # set_width(1) %>% 
+  set_caption("This is my caption") %>% 
+  set_all_padding(2) 
+  # set_number_format(col = 2, value = 4)
+
+# ht <- hux(vecm_shortrun
+#       ) %>% huxtable::add_rownames()
+# 
+# bold(ht)[1,]           <- TRUE
+# bottom_border(ht)[1,]  <- 0.4
+# align(ht)[,2]          <- "right"
+# right_padding(ht)      <- 2
+# left_padding(ht)       <- 2
+# width(ht)              <- 0.9
+# number_format(ht)      <- 2
+# 
+# ht
+```
+
+If the real disposable income variable is excluded then the Vecm results are as follows. The coefficient for 
+
+```{r VecmResultsSingle, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+source("code/time_series_data_short.R")
+dset1 <- time_series_data_short(vecm_data)
+
+source("code/vecm_tsDyn.R")
+vecm2 <- VECM_tsDyn(dset1)
+source("code/tidy_vecm_results.R")
+tidy_vecm1 <- tidy_vecm_results(vecm2)
+vecm_shortrun1 <- tidy_vecm1[[1]]
+vecm_longrun1 <- tidy_vecm1[[2]]
+
+library(huxtable)
+
+ht <- hux(vecm_longrun1
       ) %>% huxtable::add_rownames()
 
 bold(ht)[1,]           <- TRUE
@@ -88,12 +174,12 @@ bottom_border(ht)[1,]  <- 0.4
 align(ht)[,2]          <- "right"
 right_padding(ht)      <- 2
 left_padding(ht)       <- 2
-width(ht)              <- 1
+width(ht)              <- 0.9
 number_format(ht)      <- 2
 
 ht
 
-ht <- hux(vecm_shortrun
+ht <- hux(vecm_shortrun1
       ) %>% huxtable::add_rownames()
 
 bold(ht)[1,]           <- TRUE
@@ -101,25 +187,18 @@ bottom_border(ht)[1,]  <- 0.4
 align(ht)[,2]          <- "right"
 right_padding(ht)      <- 2
 left_padding(ht)       <- 2
-width(ht)              <- 1
+width(ht)              <- 0.9
 number_format(ht)      <- 2
 
 ht
 ```
 
-## Residual Testing
+## Residual Testing \label{residuals}
 
-# Analysis
+# Analysis \label{analysis}
 
-# Conclusion \label{sec:conclusion}
+# Conclusion \label{conclusion}
 
-
-<!-- capital C fro referencing and then check  -->
-<!-- \Cref{theoriginallabel} for tables, sections, tables and writes out e.g. "Table 1" - note capital "C" in \Cref-->
-
-```{r}
-# e.g.: source("images/su_logo.jpg") # if you want to source something - quick shortcut is ctrl space and that brings up a list of files also predictive text
-```
 
 
 

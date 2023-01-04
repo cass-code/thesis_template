@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.17)  5 DEC 2022 17:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.3)  4 JAN 2023 07:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **body.tex
 (./body.tex
-LaTeX2e <2022-11-01>
-L3 programming layer <2022-11-02> (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2022-12-17> (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
@@ -18,12 +18,12 @@ File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 \c@subparagraph=\count190
 \c@figure=\count191
 \c@table=\count192
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
 \bibindent=\dimen140
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
-\@mathmargin=\skip49
+\@mathmargin=\skip50
 For additional information on amsmath, use the `?' option.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
@@ -79,8 +79,8 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \totwidth@=\dimen148
 \lineht@=\dimen149
 \@envbody=\toks19
-\multlinegap=\skip50
-\multlinetaggap=\skip51
+\multlinegap=\skip51
+\multlinetaggap=\skip52
 \mathdisplay@stack=\toks20
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
@@ -178,21 +178,6 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen156
 \Gm@layoutvoffset=\dimen157
 \Gm@dimlist=\toks24
-) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2022/06/06 4.5 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count274
-\FV@InFile=\read2
-\FV@TabBox=\box53
-\c@FancyVerbLine=\count275
-\FV@StepNumber=\count276
-\FV@OutFile=\write3
-) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip52
-\fb@frw=\dimen158
-\fb@frh=\dimen159
-\FrameRule=\dimen160
-\FrameSep=\dimen161
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
@@ -204,111 +189,111 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 )
-\Gin@req@height=\dimen162
-\Gin@req@width=\dimen163
+\Gin@req@height=\dimen158
+\Gin@req@width=\dimen159
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
 Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
-\col@sep=\dimen164
-\ar@mcellbox=\box54
-\extrarowheight=\dimen165
+\col@sep=\dimen160
+\ar@mcellbox=\box53
+\extrarowheight=\dimen161
 \NC@list=\toks25
 \extratabsurround=\skip53
 \backup@length=\skip54
-\ar@cellbox=\box55
+\ar@cellbox=\box54
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2022/03/01 v3.6b Customizing captions (AR)
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
-\caption@tempdima=\dimen166
-\captionmargin=\dimen167
-\caption@leftmargin=\dimen168
-\caption@rightmargin=\dimen169
-\caption@width=\dimen170
-\caption@indent=\dimen171
-\caption@parindent=\dimen172
-\caption@hangindent=\dimen173
+\caption@tempdima=\dimen162
+\captionmargin=\dimen163
+\caption@leftmargin=\dimen164
+\caption@rightmargin=\dimen165
+\caption@width=\dimen166
+\caption@indent=\dimen167
+\caption@parindent=\dimen168
+\caption@hangindent=\dimen169
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count277
-\c@continuedfloat=\count278
+\c@caption@flags=\count274
+\c@continuedfloat=\count275
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/siunitx/siunitx.sty
-Package: siunitx 2022-11-16 v3.1.10 A comprehensive (SI) units package
-\l__siunitx_angle_tmp_dim=\dimen174
-\l__siunitx_angle_marker_box=\box56
-\l__siunitx_angle_unit_box=\box57
-\l__siunitx_compound_count_int=\count279
-\l__siunitx_number_exponent_fixed_int=\count280
-\l__siunitx_number_min_decimal_int=\count281
-\l__siunitx_number_min_integer_int=\count282
-\l__siunitx_number_round_precision_int=\count283
-\l__siunitx_number_group_first_int=\count284
-\l__siunitx_number_group_size_int=\count285
-\l__siunitx_number_group_minimum_int=\count286
-\l__siunitx_table_tmp_box=\box58
-\l__siunitx_table_tmp_dim=\dimen175
-\l__siunitx_table_column_width_dim=\dimen176
-\l__siunitx_table_integer_box=\box59
-\l__siunitx_table_decimal_box=\box60
-\l__siunitx_table_before_box=\box61
-\l__siunitx_table_after_box=\box62
-\l__siunitx_table_before_dim=\dimen177
-\l__siunitx_table_carry_dim=\dimen178
-\l__siunitx_unit_tmp_int=\count287
-\l__siunitx_unit_position_int=\count288
-\l__siunitx_unit_total_int=\count289
+Package: siunitx 2022-12-05 v3.1.11 A comprehensive (SI) units package
+\l__siunitx_angle_tmp_dim=\dimen170
+\l__siunitx_angle_marker_box=\box55
+\l__siunitx_angle_unit_box=\box56
+\l__siunitx_compound_count_int=\count276
+\l__siunitx_number_exponent_fixed_int=\count277
+\l__siunitx_number_min_decimal_int=\count278
+\l__siunitx_number_min_integer_int=\count279
+\l__siunitx_number_round_precision_int=\count280
+\l__siunitx_number_group_first_int=\count281
+\l__siunitx_number_group_size_int=\count282
+\l__siunitx_number_group_minimum_int=\count283
+\l__siunitx_table_tmp_box=\box57
+\l__siunitx_table_tmp_dim=\dimen171
+\l__siunitx_table_column_width_dim=\dimen172
+\l__siunitx_table_integer_box=\box58
+\l__siunitx_table_decimal_box=\box59
+\l__siunitx_table_before_box=\box60
+\l__siunitx_table_after_box=\box61
+\l__siunitx_table_before_dim=\dimen173
+\l__siunitx_table_carry_dim=\dimen174
+\l__siunitx_unit_tmp_int=\count284
+\l__siunitx_unit_position_int=\count285
+\l__siunitx_unit_total_int=\count286
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box63
-\UL@hyphenbox=\box64
+\UL@box=\box62
+\UL@hyphenbox=\box63
 \UL@skip=\skip55
 \UL@hook=\toks26
-\UL@height=\dimen179
-\UL@pe=\count290
-\UL@pixel=\dimen180
-\ULC@box=\box65
+\UL@height=\dimen175
+\UL@pe=\count287
+\UL@pixel=\dimen176
+\ULC@box=\box64
 Package: ulem 2019/11/18
-\ULdepth=\dimen181
+\ULdepth=\dimen177
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
 \everycr=\toks27
 \minrowclearance=\skip56
-\rownum=\count291
+\rownum=\count288
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip57
-\multirow@cntb=\count292
+\multirow@cntb=\count289
 \multirow@dima=\skip58
-\bigstrutjot=\dimen182
+\bigstrutjot=\dimen178
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/hhline.sty
 Package: hhline 2020/01/04 v2.04 Table rule package (DPC)
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count293
-\calc@Bcount=\count294
-\calc@Adimen=\dimen183
-\calc@Bdimen=\dimen184
+\calc@Acount=\count290
+\calc@Bcount=\count291
+\calc@Adimen=\dimen179
+\calc@Bdimen=\dimen180
 \calc@Askip=\skip59
 \calc@Bskip=\skip60
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count295
+\calc@Ccount=\count292
 \calc@Cskip=\skip61
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
-\TX@col@width=\dimen185
-\TX@old@table=\dimen186
-\TX@old@col=\dimen187
-\TX@target=\dimen188
-\TX@delta=\dimen189
-\TX@cols=\count296
+\TX@col@width=\dimen181
+\TX@old@table=\dimen182
+\TX@old@col=\dimen183
+\TX@target=\dimen184
+\TX@delta=\dimen185
+\TX@cols=\count293
 \TX@ftn=\toks28
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box66
+\@tempboxb=\box65
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen190
-\WF@size=\dimen191
-\c@WF@wrappedlines=\count297
-\WF@box=\box67
+\wrapoverhang=\dimen186
+\WF@size=\dimen187
+\c@WF@wrappedlines=\count294
+\WF@box=\box66
 \WF@everypar=\toks29
 Package: wrapfig 2003/01/31  v 3.6
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/adjustbox/adjustbox.sty
@@ -319,7 +304,7 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 \XKV@toks=\toks30
 \XKV@tempa@toks=\toks31
 )
-\XKV@depth=\count298
+\XKV@depth=\count295
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/adjustbox/adjcalc.sty
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
@@ -327,24 +312,24 @@ Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-
 Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/collectbox/collectbox.sty
 Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
-\collectedbox=\box68
+\collectedbox=\box67
 )
-\tc@llx=\dimen192
-\tc@lly=\dimen193
-\tc@urx=\dimen194
-\tc@ury=\dimen195
+\tc@llx=\dimen188
+\tc@lly=\dimen189
+\tc@urx=\dimen190
+\tc@ury=\dimen191
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
-\adjbox@Width=\dimen196
-\adjbox@Height=\dimen197
-\adjbox@Depth=\dimen198
-\adjbox@Totalheight=\dimen199
-\adjbox@pwidth=\dimen256
-\adjbox@pheight=\dimen257
-\adjbox@pdepth=\dimen258
-\adjbox@ptotalheight=\dimen259
+\adjbox@Width=\dimen192
+\adjbox@Height=\dimen193
+\adjbox@Depth=\dimen194
+\adjbox@Totalheight=\dimen195
+\adjbox@pwidth=\dimen196
+\adjbox@pheight=\dimen197
+\adjbox@pdepth=\dimen198
+\adjbox@ptotalheight=\dimen199
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2022-11-13 v7.00u Hypertext links for LaTeX
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
@@ -378,11 +363,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count299
+\c@section@level=\count296
 )
-\@linkdim=\dimen260
-\Hy@linkcounter=\count300
-\Hy@pagecounter=\count301
+\@linkdim=\dimen256
+\Hy@linkcounter=\count297
+\Hy@pagecounter=\count298
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2022-11-13 v7.00u Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -392,7 +377,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count302
+\Hy@SavedSpaceFactor=\count299
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2022-11-13 v7.00u Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -406,21 +391,21 @@ Package hyperref Info: Plain pages OFF on input line 4177.
 Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4410.
-\c@Hy@tempcnt=\count303
+\c@Hy@tempcnt=\count300
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4748.
-\XeTeXLinkMargin=\dimen261
+\XeTeXLinkMargin=\dimen257
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count304
-\Field@Width=\dimen262
-\Fld@charsize=\dimen263
+\Fld@menulength=\count301
+\Field@Width=\dimen258
+\Fld@charsize=\dimen259
 Package hyperref Info: Hyper figures OFF on input line 6027.
 Package hyperref Info: Link nesting OFF on input line 6032.
 Package hyperref Info: Hyper index ON on input line 6035.
@@ -432,9 +417,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6057.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count305
-\c@Item=\count306
-\c@Hfootnote=\count307
+\Hy@abspage=\count302
+\c@Item=\count303
+\c@Hfootnote=\count304
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
@@ -443,8 +428,8 @@ File: hpdftex.def 2022-11-13 v7.00u Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count308
-\c@bookmark@seq@number=\count309
+\Fld@listcount=\count305
+\c@bookmark@seq@number=\count306
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -455,33 +440,57 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 \Hy@SectionHShift=\skip62
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count310
-\l__pdf_internal_box=\box69
+\l__color_backend_stack_int=\count307
+\l__pdf_internal_box=\box68
 ) (./body.aux
 
+LaTeX Warning: Label `data' multiply defined.
+
+
+LaTeX Warning: Label `methodology' multiply defined.
+
+
+LaTeX Warning: Label `stationarity' multiply defined.
+
+
+LaTeX Warning: Label `cointegration' multiply defined.
+
+
+LaTeX Warning: Label `vecm' multiply defined.
+
+
 LaTeX Warning: Label `tab:VecmResults' multiply defined.
+
+
+LaTeX Warning: Label `tab:VecmResultsSingle' multiply defined.
+
+
+LaTeX Warning: Label `analysis' multiply defined.
+
+
+LaTeX Warning: Label `conclusion' multiply defined.
 
 )
 \openout1 = `body.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -527,47 +536,81 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: threeparttable package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 121.
+Package hyperref Info: Link coloring OFF on input line 81.
 (./body.out) (./body.out)
-\@outlinefile=\write4
-\openout4 = `body.out'.
+\@outlinefile=\write3
+\openout3 = `body.out'.
+
+
+Package hyperref Warning: Suppressing empty link on input line 87.
+
+
+Package hyperref Warning: Suppressing empty link on input line 88.
+
+
+Package hyperref Warning: Suppressing empty link on input line 90.
 
 <body_files/figure-latex/graphs-1.pdf, id=44, 469.755pt x 325.215pt>
 File: body_files/figure-latex/graphs-1.pdf Graphic file (type pdf)
 <use body_files/figure-latex/graphs-1.pdf>
-Package pdftex.def Info: body_files/figure-latex/graphs-1.pdf  used on input line 132.
+Package pdftex.def Info: body_files/figure-latex/graphs-1.pdf  used on input line 114.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-(c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd)
-Underfull \hbox (badness 10000) in alignment at lines 259--259
-[][] 
- []
-
-[1
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 139.
+(c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 139.
+(c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 139.
+(c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 139.
+(c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 139.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 139.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 139.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 139.
+(c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 139.
+(c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
 
 {c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./body_files/figure-latex/graphs-1.pdf>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 342.
-(c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [2] [3] (./body.aux)
+Underfull \hbox (badness 10000) in alignment at lines 411--411
+[][][][][] 
+ []
+
+[2] [3] (./body.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `body.out' has not changed.
-(rerunfilecheck)             Checksum: BC296664F5E698E5725EBC95D52AAD7C;1065.
+(rerunfilecheck)             Checksum: 6B13DF7B3474D0D761B04CA3D6C32D33;1089.
  ) 
 Here is how much of TeX's memory you used:
- 16522 strings out of 476931
- 309023 string characters out of 5823845
- 639658 words of memory out of 5000000
- 37505 multiletter control sequences out of 15000+600000
- 500237 words of font info for 53 fonts, out of 8000000 for 9000
+ 15981 strings out of 478053
+ 300203 string characters out of 5839309
+ 1875787 words of memory out of 5000000
+ 35851 multiletter control sequences out of 15000+600000
+ 542627 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,17n,77p,254b,896s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on body.pdf (3 pages, 112582 bytes).
+ 72i,17n,77p,269b,899s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb>
+Output written on body.pdf (3 pages, 100727 bytes).
 PDF statistics:
  110 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
- 30 named destinations out of 1000 (max. 500000)
+ 96 compressed objects within 1 object stream
+ 34 named destinations out of 1000 (max. 500000)
  86 words of extra memory for PDF output out of 10000 (max. 10000000)
 

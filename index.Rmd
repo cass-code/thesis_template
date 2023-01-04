@@ -15,10 +15,11 @@ fontsize: 12pt
 papersize: letter
 classoption: oneside, openany
 margin-ratio: goldenblock
-title: "This is the title of my thesis"
+title: "The relationship between illicit cigarettes and the legal tobacco market in South Africa"
+subtitle: "An econometric analysis"
 titel: "Hierdie is die titel van my tesis"
-author: Wihan Marais
-author-short: W.\ Marais
+author: "Cassandra Pengelly"
+author-short: C.\ Pengelly
 degree-short: MCom (Economics)
 degree: Master in Economics
 graad-short: MCom (Ekonomie)
@@ -44,19 +45,19 @@ header-includes:
 # - \usepackage{caption}
 ---
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, include= F}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, include= FALSE}
 
 rm(list = ls())
 gc()
 
-knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo=FALSE, 
-                      fig.align = 'center') # adjust dpi for image
-# knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo=FALSE, 
-#                       fig.width = 4.5, fig.height = 2.5, fig.align = 'center',
-#                       fig.ext = 'png', dev = 'png', dpi = 600) # adjust dpi for image quality/knit speed
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo=FALSE,
+                      fig.width = 6, fig.height = 3, fig.align = 'center',
+                      fig.ext = 'png', dev = 'png', dpi = 600) 
+# adjust dpi for image quality/knit speed
 
 library(pacman)
-pacman::p_load(tidyverse, glue, huxtable, gridExtra, wesanderson, ggrepel, tsDyn, dplyr) # can load all packages here - don't need to include them separately in the other scripts and RMD files 
+pacman::p_load(tidyverse, glue, huxtable, gridExtra, wesanderson, ggrepel, tsDyn, dplyr) 
+# can load all packages here - don't need to include them separately in the other scripts and RMD files 
 
 ```
 
