@@ -1,20 +1,22 @@
-
-<!-- --- -->
-<!-- output: -->
-<!--    pdf_document -->
-<!-- --- -->
+---
+output:
+   pdf_document
+---
 
 # Introduction
 
 This study examines the relationship between the legal and illegal tobacco markets in South Africa. Section \ref{data} discusses the data used and how it was cleaned. Section \ref{methodology} explains the methodology, where a VECM model is presented. The final section details discussion points (\ref{analysis}). The appendix contains the full model outputs. 
 
- 
 
-# The tobacco industry in South Arica
+# The Illicit Tobacco Market
 
-The concern around the illict tobacco market twofold. Firstly, access to cheaper cigarettes  
+The health problems associated with tobacco consumption are significant and have been well-documented (Tingum et al, 2020:62). Worldwide, smoking is one of the leading causes of preventable deaths; and in South Africa 23% of the total deaths in 2018 were smoking-related (Statistics South Africa). Given the large and negative impact of smoking, the tobacco market has come under increasing scrutiny by governments and health organizations. A significant component of the tobacco market is the illicit cigarette trade, which the Financial Action Task Force (2012:7) defines as “…the supply, distribution and sale of smuggled genuine, counterfeit or cheap white tobacco products.”
 
+The illicit tobacco market gives rise to concern on three main fronts: public health, tax evasion, and criminal activity. From a public health perspective, illicit cigarettes make smoking more affordable and thereby increases tobacco access (van der Zee et al, 2019:242). Cheaper cigarettes may induce non-smokers to smoke, increase the volume of cigarettes consumed by smokers, and decrease the likelihood that smokers will quit smoking (Pechacek et al, 2018:pagenumber; van der Zee et al, 2019:242).
 
+According to the International Agency for Research on Cancer, tobacco use is more prevalent among low socio-economic groups, and the poor are more sensitive to cigarette prices (IARC, 2011:276). Consequently, the health problems linked to smoking are disproportionately higher among the poor, which results in a greater burden on the public healthcare sector (). In South Africa, the healthcare costs associated with smoking amounted to R14.48 billion in 2016, which accounted for 4.1% of health spending (). In addition to the healthcare costs, there are indirect costs linked to smoking such as the loss of productive lives and loss of productive days due to illness (Boachie et al, 2020). In 2016, the total cost of smoking to South Africa was R42.32 billion (0.97% of GDP).
+
+Evidently, the public health and economic costs of tobacco use are extensive. In an effort to reduce tobacco use, many countries have implemented tax and price policies on tobacco products (Chaloupka, Straif, Leon). For a middle-income country, South Africa was considered to be at the forefront of tobacco control policies, including excise duties, for many years (Vellios ). From a fiscal perspective, excise tax on cigarettes is a source of government revenue, which is undermined by the illicit tobacco industry.  Blah ble estimates the loss of income due to the illicit market to be R123123 The loss of income
 
 
 # Data \label{data}
@@ -41,10 +43,11 @@ time_series_plots(log_data)
 
 # Methodology \label{methodology}
 
+The long-run relationship between the legal cigarette market and the illicit market is modeled as a vector error correction model 
 
 ## Stationarity \label{stationarity}
 
-Running the ADF tests.
+To test whether the series are stationary, three tests are employed: the augmented dickey fu
 
 ```{r stationarityResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
 source("code/time_series_data.R")
@@ -63,28 +66,17 @@ rownames(dickeyTest) = c("Quantity legal cigarettes", "Price ratio", "Disposable
 
 library(huxtable)
 
-# ht <- hux(dickeyTest
-#       ) %>% huxtable::add_rownames()
-
 dickeyTest %>% 
   rename("Statistic" = statistic) %>% 
   as_hux() %>% 
   theme_article() %>% 
   set_font_size(10) %>% 
   # set_width(1) %>% 
-  set_caption("This is my caption \\label{tab:adf}") %>% 
+  set_caption("Augmented Dickey Fuller Tests \\label{tab:adf}") %>% 
   set_all_padding(2) %>% 
-  set_number_format(col = 2, value = 4)
+  set_number_format(col = 2, value = 4) %>% 
+  huxtable::add_rownames()
 
-# bold(ht)[1,]           <- TRUE
-# bottom_border(ht)[1,]  <- 0.4
-# align(ht)[,2]          <- "right"
-# right_padding(ht)      <- 2
-# left_padding(ht)       <- 2
-# width(ht)              <- 1
-# number_format(ht)      <- 2
-
-# ht
 ```
 
 ## Cointegration \label{cointegration}

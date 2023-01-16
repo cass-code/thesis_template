@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.3)  4 JAN 2023 08:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.3)  5 JAN 2023 13:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -764,7 +764,7 @@ Package caption Info: hyperref package is loaded.
 \sf@top=\skip267
 \sf@bottom=\skip268
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/siunitx/siunitx.sty
-Package: siunitx 2022-12-05 v3.1.11 A comprehensive (SI) units package
+Package: siunitx 2023-01-03 v3.2.0 A comprehensive (SI) units package
 \l__siunitx_angle_tmp_dim=\dimen274
 \l__siunitx_angle_marker_box=\box60
 \l__siunitx_angle_unit_box=\box61
@@ -773,53 +773,56 @@ Package: siunitx 2022-12-05 v3.1.11 A comprehensive (SI) units package
 \l__siunitx_number_min_decimal_int=\count356
 \l__siunitx_number_min_integer_int=\count357
 \l__siunitx_number_round_precision_int=\count358
-\l__siunitx_number_group_first_int=\count359
-\l__siunitx_number_group_size_int=\count360
-\l__siunitx_number_group_minimum_int=\count361
+\l__siunitx_number_lower_threshold_int=\count359
+\l__siunitx_number_upper_threshold_int=\count360
+\l__siunitx_number_group_first_int=\count361
+\l__siunitx_number_group_size_int=\count362
+\l__siunitx_number_group_minimum_int=\count363
 \l__siunitx_table_tmp_box=\box62
 \l__siunitx_table_tmp_dim=\dimen275
 \l__siunitx_table_column_width_dim=\dimen276
 \l__siunitx_table_integer_box=\box63
 \l__siunitx_table_decimal_box=\box64
-\l__siunitx_table_before_box=\box65
-\l__siunitx_table_after_box=\box66
+\l__siunitx_table_uncert_box=\box65
+\l__siunitx_table_before_box=\box66
+\l__siunitx_table_after_box=\box67
 \l__siunitx_table_before_dim=\dimen277
 \l__siunitx_table_carry_dim=\dimen278
-\l__siunitx_unit_tmp_int=\count362
-\l__siunitx_unit_position_int=\count363
-\l__siunitx_unit_total_int=\count364
+\l__siunitx_unit_tmp_int=\count364
+\l__siunitx_unit_position_int=\count365
+\l__siunitx_unit_total_int=\count366
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box67
-\UL@hyphenbox=\box68
+\UL@box=\box68
+\UL@hyphenbox=\box69
 \UL@skip=\skip269
 \UL@hook=\toks34
 \UL@height=\dimen279
-\UL@pe=\count365
+\UL@pe=\count367
 \UL@pixel=\dimen280
-\ULC@box=\box69
+\ULC@box=\box70
 Package: ulem 2019/11/18
 \ULdepth=\dimen281
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
 \everycr=\toks35
 \minrowclearance=\skip270
-\rownum=\count366
+\rownum=\count368
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip271
-\multirow@cntb=\count367
+\multirow@cntb=\count369
 \multirow@dima=\skip272
 \bigstrutjot=\dimen282
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/hhline.sty
 Package: hhline 2020/01/04 v2.04 Table rule package (DPC)
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box70
+\@tempboxb=\box71
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen283
 \WF@size=\dimen284
-\c@WF@wrappedlines=\count368
-\WF@box=\box71
+\c@WF@wrappedlines=\count370
+\WF@box=\box72
 \WF@everypar=\toks36
 Package: wrapfig 2003/01/31  v 3.6
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/adjustbox/adjustbox.sty
@@ -830,7 +833,7 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 \XKV@toks=\toks37
 \XKV@tempa@toks=\toks38
 )
-\XKV@depth=\count369
+\XKV@depth=\count371
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/adjustbox/adjcalc.sty
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
@@ -838,7 +841,7 @@ Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-
 Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/collectbox/collectbox.sty
 Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
-\collectedbox=\box72
+\collectedbox=\box73
 )
 \tc@llx=\dimen285
 \tc@lly=\dimen286
@@ -858,52 +861,266 @@ File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 \adjbox@ptotalheight=\dimen296
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count370
-\l__pdf_internal_box=\box73
-) (./index.aux)
+\l__color_backend_stack_int=\count372
+\l__pdf_internal_box=\box74
+) (./index.aux (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
+Package babel Info: Importing basic data for english
+(babel)             from babel-en.ini. Reported on input line 11.
+)
+
+LaTeX Warning: Label `data' multiply defined.
+
+
+LaTeX Warning: Label `data@cref' multiply defined.
+
+
+LaTeX Warning: Label `methodology' multiply defined.
+
+
+LaTeX Warning: Label `methodology@cref' multiply defined.
+
+
+LaTeX Warning: Label `stationarity' multiply defined.
+
+
+LaTeX Warning: Label `stationarity@cref' multiply defined.
+
+
+LaTeX Warning: Label `cointegration' multiply defined.
+
+
+LaTeX Warning: Label `cointegration@cref' multiply defined.
+
+
+LaTeX Warning: Label `vecm' multiply defined.
+
+
+LaTeX Warning: Label `vecm@cref' multiply defined.
+
+
+LaTeX Warning: Label `tab:VecmResults' multiply defined.
+
+
+LaTeX Warning: Label `tab:VecmResults@cref' multiply defined.
+
+
+LaTeX Warning: Label `tab:VecmResultsSingle' multiply defined.
+
+
+LaTeX Warning: Label `tab:VecmResultsSingle@cref' multiply defined.
+
+
+LaTeX Warning: Label `analysis' multiply defined.
+
+
+LaTeX Warning: Label `analysis@cref' multiply defined.
+
+
+LaTeX Warning: Label `conclusion' multiply defined.
+
+
+LaTeX Warning: Label `conclusion@cref' multiply defined.
+
+)
 \openout1 = `index.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 141.
-(./index.out) (./index.out
-! I can't write on file `index.pdf'.
-(Press Enter to retry, or Control-Z to exit; default file extension is `.pdf')
-Please type another file name for output
-! Emergency stop.
-\Hy@OutlineName ...utline goto name{#2}count#3{#4}
-                                                  
-l.1 ...\000l\000a\000r\000a\000t\000i\000o\000n}{}
-                                                  % 1 
-Here is how much of TeX's memory you used:
- 21539 strings out of 478053
- 385034 string characters out of 5839309
- 1849787 words of memory out of 5000000
- 41407 multiletter control sequences out of 15000+600000
- 515990 words of font info for 36 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 72i,1n,79p,332b,384s stack positions out of 10000i,1000n,20000p,200000b,200000s
+Package hyperref Info: Link coloring OFF on input line 142.
+(./index.out) (./index.out)
+\@outlinefile=\write4
+\openout4 = `index.out'.
 
-!  ==> Fatal error occurred, no output PDF file produced!
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: threeparttable package is loaded.
+Package caption Info: wrapfig package is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 145.
+(c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 145.
+(c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 145.
+(c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 145.
+(c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <17.28> on input line 145.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 145.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 145.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 145.
+(c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 145.
+(c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 145.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 145.
+<./images/sun_logo.png, id=80, 276.28218pt x 369.63094pt>
+File: ./images/sun_logo.png Graphic file (type png)
+<use ./images/sun_logo.png>
+Package pdftex.def Info: ./images/sun_logo.png  used on input line 145.
+(pdftex.def)             Requested size: 89.70789pt x 120.01582pt.
+[1
+
+
+
+{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/sun_logo.png>]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 148.
+(c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) (./abstract.Rmd
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \begin{abstract}[english]
+                              [1
+
+]
+
+Package natbib Warning: Citation `app19' on page ii undefined on input line 2.
+
+) (./acknowledgements.Rmd [2
+
+]) [3
+
+] (./index.toc) [4
+
+] [5] (./index.lof) [6
+
+] (./index.lot) [7
+
+] [1
+
+
+
+] [2
+
+]
+<index_files/figure-latex/graphs-1.png, id=177, 433.62pt x 325.215pt>
+File: index_files/figure-latex/graphs-1.png Graphic file (type png)
+<use index_files/figure-latex/graphs-1.png>
+Package pdftex.def Info: index_files/figure-latex/graphs-1.png  used on input line 228.
+(pdftex.def)             Requested size: 433.61894pt x 325.2142pt.
+
+Overfull \hbox (35.61894pt too wide) in paragraph at lines 228--228
+ [] 
+ []
+
+[3
+
+] [4 <./index_files/figure-latex/graphs-1.png>]
+Overfull \hbox (5.48474pt too wide) in paragraph at lines 363--363
+ []\T1/lmr/bx/n/10.95 Table 4.2: 
+ []
+
+[5
+
+]
+Overfull \hbox (0.90443pt too wide) in paragraph at lines 525--525
+ \T1/lmr/m/n/12 0.64(0.14)***[]
+ []
+
+
+Overfull \hbox (0.90443pt too wide) in paragraph at lines 525--525
+[][]\T1/lmr/m/n/12 5.05(1.08)***[]  
+ []
+
+
+Overfull \hbox (0.90443pt too wide) in paragraph at lines 525--525
+\T1/lmr/m/n/12 0.35(0.09)***[]  
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 525--525
+[][][][][] 
+ []
+
+[6] [7
+
+] [8
+
+] [9
+
+] [10
+
+] (./index.bbl (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/stellenbosch/usbib.eng)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 31.
+)
+
+Package natbib Warning: There were undefined citations.
+
+[11
+
+
+
+]
+\tf@toc=\write5
+\openout5 = `index.toc'.
+
+\tf@lof=\write6
+\openout6 = `index.lof'.
+
+\tf@lot=\write7
+\openout7 = `index.lot'.
+
+(./index.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `index.out' has not changed.
+(rerunfilecheck)             Checksum: 9C8BC8B74CFBB418C08A0D4B97483198;2112.
+ ) 
+Here is how much of TeX's memory you used:
+ 23297 strings out of 478053
+ 427360 string characters out of 5839309
+ 1873787 words of memory out of 5000000
+ 43011 multiletter control sequences out of 15000+600000
+ 618914 words of font info for 104 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 72i,17n,79p,332b,1148s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro12.pfb>
+Output written on index.pdf (19 pages, 439849 bytes).
+PDF statistics:
+ 297 PDF objects out of 1000 (max. 8388607)
+ 250 compressed objects within 3 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+
