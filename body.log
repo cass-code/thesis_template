@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.3)  13 JAN 2023 10:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.28)  29 JAN 2023 13:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **body.tex
 (./body.tex
 LaTeX2e <2022-11-01> patch level 1
-L3 programming layer <2022-12-17> (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
+L3 programming layer <2023-01-24> (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
@@ -442,21 +442,21 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip62
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count309
 \l__pdf_internal_box=\box69
 ) (./body.aux
 
-LaTeX Warning: Label `data' multiply defined.
-
-
 LaTeX Warning: Label `methodology' multiply defined.
 
 
-LaTeX Warning: Label `stationarity' multiply defined.
+LaTeX Warning: Label `data' multiply defined.
 
 
-LaTeX Warning: Label `cointegration' multiply defined.
+LaTeX Warning: Label `kp' multiply defined.
+
+
+LaTeX Warning: Label `trace' multiply defined.
 
 
 LaTeX Warning: Label `vecm' multiply defined.
@@ -465,13 +465,13 @@ LaTeX Warning: Label `vecm' multiply defined.
 LaTeX Warning: Label `tab:VecmResults' multiply defined.
 
 
-LaTeX Warning: Label `tab:VecmResultsSingle' multiply defined.
-
-
 LaTeX Warning: Label `analysis' multiply defined.
 
 
 LaTeX Warning: Label `conclusion' multiply defined.
+
+
+LaTeX Warning: Label `tab:VecmResultsSingle' multiply defined.
 
 )
 \openout1 = `body.aux'.
@@ -553,68 +553,74 @@ Package hyperref Warning: Suppressing empty link on input line 88.
 
 Package hyperref Warning: Suppressing empty link on input line 90.
 
-<body_files/figure-latex/graphs-1.pdf, id=44, 469.755pt x 325.215pt>
-File: body_files/figure-latex/graphs-1.pdf Graphic file (type pdf)
-<use body_files/figure-latex/graphs-1.pdf>
-Package pdftex.def Info: body_files/figure-latex/graphs-1.pdf  used on input line 114.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [1
 
-{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./body_files/figure-latex/graphs-1.pdf>]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 141.
+{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<body_files/figure-latex/graphs-1.pdf, id=56, 469.755pt x 325.215pt>
+File: body_files/figure-latex/graphs-1.pdf Graphic file (type pdf)
+<use body_files/figure-latex/graphs-1.pdf>
+Package pdftex.def Info: body_files/figure-latex/graphs-1.pdf  used on input line 170.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 191.
+(c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 215.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 141.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 215.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 141.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 215.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 141.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 215.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 141.
+(Font)              <10> on input line 215.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 141.
+(Font)              <7> on input line 215.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 141.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 141.
+(Font)              <5> on input line 215.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 215.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 141.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 215.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \hbox (badness 10000) in alignment at lines 417--417
+) [2 <./body_files/figure-latex/graphs-1.pdf>] [3]
+Underfull \hbox (badness 10000) in alignment at lines 853--853
 [][][][][] 
  []
 
-[2] [3] (./body.aux)
+[4
+
+] [5] (./body.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `body.out' has not changed.
-(rerunfilecheck)             Checksum: 8A700605A89910EA652B646FAD19B504;1140.
+(rerunfilecheck)             Checksum: E2671A323EFBAE53D796DB9032E37BA8;1179.
  ) 
 Here is how much of TeX's memory you used:
- 16016 strings out of 478053
- 301509 string characters out of 5839309
- 1877787 words of memory out of 5000000
- 35886 multiletter control sequences out of 15000+600000
- 542627 words of font info for 55 fonts, out of 8000000 for 9000
+ 16080 strings out of 478025
+ 302836 string characters out of 5838745
+ 1894299 words of memory out of 5000000
+ 35959 multiletter control sequences out of 15000+600000
+ 542992 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,17n,77p,269b,887s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb>
-Output written on body.pdf (3 pages, 100996 bytes).
+ 75i,17n,76p,269b,883s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb>
+Output written on body.pdf (5 pages, 113466 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
- 34 named destinations out of 1000 (max. 500000)
+ 148 PDF objects out of 1000 (max. 8388607)
+ 128 compressed objects within 2 object streams
+ 49 named destinations out of 1000 (max. 500000)
  86 words of extra memory for PDF output out of 10000 (max. 10000000)
 

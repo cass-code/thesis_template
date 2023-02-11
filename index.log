@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.3)  5 JAN 2023 13:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.28)  30 JAN 2023 10:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **index.tex
 (./index.tex
 LaTeX2e <2022-11-01> patch level 1
-L3 programming layer <2022-12-17> (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/memoir/memoir.cls
+L3 programming layer <2023-01-24> (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/memoir/memoir.cls
 Document Class: memoir 2022/11/17 v3.7.19 configurable book, report, article document class
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
@@ -684,7 +684,7 @@ Package cleveref Info: always capitalise cross-reference names on input line 785
 )
 Package hyperref Info: Option `breaklinks' set `true' on input line 41.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2022/12/26 3.84 The Babel package
+Package: babel 2022/01/23 3.85 The Babel package
 \babel@savecnt=\count342
 \U@D=\dimen262
 \l@unhyphenated=\language3
@@ -693,11 +693,11 @@ Package: babel 2022/12/26 3.84 The Babel package
 \bbl@dirlevel=\count343
 Package babel Info: Main language set with 'main='. Except if you have
 (babel)             problems, prefer the default mechanism for setting
-(babel)             the main language. Reported on input line 4316.
+(babel)             the main language. Reported on input line 4320.
 Package babel Info: You haven't specified a language as a class or package
-(babel)             option. I'll load 'nil'. Reported on input line 4406.
+(babel)             option. I'll load 'nil'. Reported on input line 4410.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/nil.ldf
-Language: nil 2022/12/26 3.84 Nil language
+Language: nil 2022/01/23 3.85 Nil language
 \l@nil=\language4
 )) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/stellenbosch/usnomencl.sty
 Package: usnomencl 2008/05/30 v1.1 Stellenbosh Thesis Nomenclature (DNJ ELS)
@@ -716,7 +716,7 @@ Package: suffix 2006/07/15 1.5a Variant command support
 \integerpart=\count344
 \decimalpart=\count345
 )
-Package: xstring 2021/07/21 v1.84 String manipulations (CT)
+Package: xstring 2023/01/14 v1.85 String manipulations (CT)
 )
 \AC@clearlist=\toks33
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/stellenbosch/usbib.sty
@@ -860,7 +860,7 @@ File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 \adjbox@pdepth=\dimen295
 \adjbox@ptotalheight=\dimen296
 ) (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count372
 \l__pdf_internal_box=\box74
 ) (./index.aux (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
@@ -868,28 +868,28 @@ Package babel Info: Importing basic data for english
 (babel)             from babel-en.ini. Reported on input line 11.
 )
 
-LaTeX Warning: Label `data' multiply defined.
-
-
-LaTeX Warning: Label `data@cref' multiply defined.
-
-
 LaTeX Warning: Label `methodology' multiply defined.
 
 
 LaTeX Warning: Label `methodology@cref' multiply defined.
 
 
-LaTeX Warning: Label `stationarity' multiply defined.
+LaTeX Warning: Label `data' multiply defined.
 
 
-LaTeX Warning: Label `stationarity@cref' multiply defined.
+LaTeX Warning: Label `data@cref' multiply defined.
 
 
-LaTeX Warning: Label `cointegration' multiply defined.
+LaTeX Warning: Label `kp' multiply defined.
 
 
-LaTeX Warning: Label `cointegration@cref' multiply defined.
+LaTeX Warning: Label `kp@cref' multiply defined.
+
+
+LaTeX Warning: Label `trace' multiply defined.
+
+
+LaTeX Warning: Label `trace@cref' multiply defined.
 
 
 LaTeX Warning: Label `vecm' multiply defined.
@@ -924,31 +924,31 @@ LaTeX Warning: Label `conclusion@cref' multiply defined.
 )
 \openout1 = `index.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 142.
+Package hyperref Info: Link coloring OFF on input line 132.
 (./index.out) (./index.out)
 \@outlinefile=\write4
 \openout4 = `index.out'.
@@ -958,51 +958,51 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: threeparttable package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 145.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 135.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 145.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 135.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 145.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 135.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 145.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 135.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 145.
+(Font)              <17.28> on input line 135.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 145.
+(Font)              <12> on input line 135.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 145.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 145.
+(Font)              <10> on input line 135.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 135.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 145.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 135.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 145.
+(Font)              <8> on input line 135.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 145.
-<./images/sun_logo.png, id=80, 276.28218pt x 369.63094pt>
-File: ./images/sun_logo.png Graphic file (type png)
-<use ./images/sun_logo.png>
-Package pdftex.def Info: ./images/sun_logo.png  used on input line 145.
-(pdftex.def)             Requested size: 89.70789pt x 120.01582pt.
+(Font)              <6> on input line 135.
+<./images/logo.png, id=76, 222.8325pt x 249.93375pt>
+File: ./images/logo.png Graphic file (type png)
+<use ./images/logo.png>
+Package pdftex.def Info: ./images/logo.png  used on input line 135.
+(pdftex.def)             Requested size: 89.70789pt x 100.61623pt.
 [1
 
 
 
-{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/sun_logo.png>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 148.
+{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/logo.png>]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 138.
 (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (./abstract.Rmd
@@ -1014,17 +1014,18 @@ l.1 \begin{abstract}[english]
 
 ]
 
+Package usthesis Warning: No institutional address supplied on input line 1.
+
+
 Package natbib Warning: Citation `app19' on page ii undefined on input line 2.
 
-) (./acknowledgements.Rmd [2
+) [2
 
-]) [3
+] (./index.toc) [3
 
-] (./index.toc) [4
+] (./index.lof) [4
 
-] [5] (./index.lof) [6
-
-] (./index.lot) [7
+] (./index.lot) [5
 
 ] [1
 
@@ -1032,53 +1033,63 @@ Package natbib Warning: Citation `app19' on page ii undefined on input line 2.
 
 ] [2
 
+] [3] [4
+
 ]
-<index_files/figure-latex/graphs-1.png, id=177, 433.62pt x 325.215pt>
+<index_files/figure-latex/graphs-1.png, id=183, 433.62pt x 325.215pt>
 File: index_files/figure-latex/graphs-1.png Graphic file (type png)
 <use index_files/figure-latex/graphs-1.png>
-Package pdftex.def Info: index_files/figure-latex/graphs-1.png  used on input line 228.
+Package pdftex.def Info: index_files/figure-latex/graphs-1.png  used on input line 258.
 (pdftex.def)             Requested size: 433.61894pt x 325.2142pt.
 
-Overfull \hbox (35.61894pt too wide) in paragraph at lines 228--228
- [] 
+Overfull \hbox (35.61894pt too wide) in paragraph at lines 258--259
+ [][] 
  []
 
-[3
 
-] [4 <./index_files/figure-latex/graphs-1.png>]
-Overfull \hbox (5.48474pt too wide) in paragraph at lines 363--363
- []\T1/lmr/bx/n/10.95 Table 4.2: 
+Underfull \hbox (badness 1314) in paragraph at lines 269--276
+\T1/lmr/m/n/12 To test whether the series are stationary, three tests were employed:
  []
 
-[5
+[5 <./index_files/figure-latex/graphs-1.png>]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 624.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 624.
+[6] [7]
+Overfull \hbox (5.48474pt too wide) in paragraph at lines 781--781
+ []\T1/lmr/bx/n/10.95 Table 3.8: 
+ []
 
-]
-Overfull \hbox (0.90443pt too wide) in paragraph at lines 525--525
+
+Overfull \hbox (0.90443pt too wide) in paragraph at lines 943--943
  \T1/lmr/m/n/12 0.64(0.14)***[]
  []
 
 
-Overfull \hbox (0.90443pt too wide) in paragraph at lines 525--525
+Overfull \hbox (0.90443pt too wide) in paragraph at lines 943--943
 [][]\T1/lmr/m/n/12 5.05(1.08)***[]  
  []
 
 
-Overfull \hbox (0.90443pt too wide) in paragraph at lines 525--525
+Overfull \hbox (0.90443pt too wide) in paragraph at lines 943--943
 \T1/lmr/m/n/12 0.35(0.09)***[]  
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 525--525
+Underfull \hbox (badness 10000) in alignment at lines 943--943
 [][][][][] 
  []
 
-[6] [7
+[8
 
-] [8
+] [9] [10
 
-] [9
+] [11
 
-] [10
+] [12
+
+] [13
 
 ] (./index.bbl (c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/stellenbosch/usbib.eng)
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1087,7 +1098,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 Package natbib Warning: There were undefined citations.
 
-[11
+[14
 
 
 
@@ -1106,21 +1117,21 @@ Package natbib Warning: There were undefined citations.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `index.out' has not changed.
-(rerunfilecheck)             Checksum: 9C8BC8B74CFBB418C08A0D4B97483198;2112.
+(rerunfilecheck)             Checksum: 4BB1AB32EBD7CD1541B1C149A57C7E67;2026.
  ) 
 Here is how much of TeX's memory you used:
- 23297 strings out of 478053
- 427360 string characters out of 5839309
- 1873787 words of memory out of 5000000
- 43011 multiletter control sequences out of 15000+600000
- 618914 words of font info for 104 fonts, out of 8000000 for 9000
+ 23354 strings out of 478025
+ 428029 string characters out of 5838745
+ 1887299 words of memory out of 5000000
+ 43077 multiletter control sequences out of 15000+600000
+ 634116 words of font info for 120 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,17n,79p,332b,1148s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro12.pfb>
-Output written on index.pdf (19 pages, 439849 bytes).
+ 75i,17n,79p,332b,1148s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/Users/cassi/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro12.pfb>
+Output written on index.pdf (20 pages, 430199 bytes).
 PDF statistics:
- 297 PDF objects out of 1000 (max. 8388607)
- 250 compressed objects within 3 object streams
- 65 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 321 PDF objects out of 1000 (max. 8388607)
+ 271 compressed objects within 3 object streams
+ 75 named destinations out of 1000 (max. 500000)
+ 155 words of extra memory for PDF output out of 10000 (max. 10000000)
 

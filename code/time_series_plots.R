@@ -1,7 +1,8 @@
-time_series_plots <- function(log_data){
+time_series_plots <- function(vecm_data){
   library(tidyverse)
+  library(dplyr)
   
-  plotData <- select(log_data, c(DATE, QDP, PRDP, PRDNP, PRATIO, YR)) %>% 
+  plotData <- dplyr::select(vecm_data, c(DATE, QDP, PRDP, PRDNP, PRATIO, YR)) %>% 
     rename(Year = DATE, "Quantity legal cigarettes (sticks, millions)" = QDP, "Illicit cigarette price (Rands)" = PRDNP, "Legal cigarette price (Rands)" = PRDP, "Price ratio (Legal/Illicit)" = PRATIO, "Real disposable income" = YR)
   
   wihan_gathered <- plotData %>% 

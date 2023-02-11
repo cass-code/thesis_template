@@ -8,3 +8,4 @@ adf_test <- function(dset){
   dickey_results <- list(Q, R, Y) 
   return(dickey_results)
 }
+
