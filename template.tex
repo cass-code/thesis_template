@@ -250,8 +250,11 @@ $if(subtitle)$
 $endif$
 $if(author)$
 %\author{$for(author)$$author$$sep$ \and $endfor$}
-\author{$author-short$}{$author$}
+\author{$author-short$}{$author$ \\ \\ \includegraphics[width=70mm]{$logo$}}
 $endif$
+% $if(logo)$
+% \WaterMark{$logo$}
+% $endif$
 $if(address)$
 \address{\AorE{%-- Afrikaans ----------------------------------------
         Departement van Ekonomie,\\
@@ -263,6 +266,7 @@ $if(address)$
         Private Bag X1, Matieland 7602, South Africa.
              }}
 $endif$
+
 % $if(institute)$
 % \providecommand{\institute}[1]{}
 % \institute{$for(institute)$$institute$$sep$ \and $endfor$}
@@ -293,9 +297,15 @@ $endif$
 \linespread{1.213}
 % \linespread{1.4}
 
-\begin{document}
+% \begin{document}
+%  \frontmatter
+%   \WaterMark{./images/logo.png}
+%  $if(title)$
+%  \TitlePage
+%  $endif$
+ 
+ \begin{document}
  \frontmatter
-  \WaterMark{./images/logo.png}
  $if(title)$
  \TitlePage
  $endif$

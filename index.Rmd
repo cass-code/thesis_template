@@ -15,10 +15,11 @@ fontsize: 12pt
 papersize: letter
 classoption: oneside, openany
 margin-ratio: goldenblock
-title: "An econometric analysis of the South African Tobacco Market"
-subtitle: "An econometric analysis"
+title: An Econometric Analysis of the Illicit South African Tobacco Market
+subtitle: An econometric analysis
 titel: "Hierdie is die titel van my tesis"
 author: "Cassandra Pengelly"
+logo: "./images/su_logo.jpg"
 author-short: C.\ Pengelly
 degree-short: MCom (Economics)
 degree: Master in Economics
