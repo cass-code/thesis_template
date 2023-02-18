@@ -2,7 +2,7 @@
 output: 
   pdf_document:
     citation_package: natbib
-    template: ustemplate2.tex
+    template: template.tex
     toc: true
     toc_depth: 3
     number_sections: true
@@ -46,19 +46,15 @@ header-includes:
 ---
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, include= FALSE}
-
 rm(list = ls())
 gc()
-
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo=FALSE,
                       fig.width = 6, fig.height = 3, fig.align = 'center',
                       fig.ext = 'png', dev = 'png', dpi = 600) 
 # adjust dpi for image quality/knit speed
-
 library(pacman)
 pacman::p_load(tidyverse, glue, huxtable, gridExtra, wesanderson, ggrepel, tsDyn, dplyr, zoo, dplyr, broom) 
 # can load all packages here - don't need to include them separately in the other scripts and RMD files 
-
 ```
 
 ```{r child = 'body.Rmd'}

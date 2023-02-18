@@ -1,3 +1,253 @@
-# Behind the Scenes
+# Stationarity Testing \label{appendixA}
 
-This is the example appendix.
+```{r ADFResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/time_series_data.R")
+dset <- time_series_data(vecm_data)
+
+source("code/adf_test.R")
+dickeyFuller <- adf_test(dset)
+library(broom)
+
+Qadftest <- broom::tidy(dickeyFuller[[1]])
+Padftest <- broom::tidy(dickeyFuller[[2]])
+Yadftest <- broom::tidy(dickeyFuller[[3]])
+
+dickeyTest <- as.data.frame(bind_rows(Qadftest, Padftest, Yadftest))
+dickeyTest <- dickeyTest[,-3]
+dickeyTest <- dickeyTest[,-3]
+rownames(dickeyTest) = c("Quantity legal cigarettes", "Price ratio", "Disposable income")
+
+
+library(huxtable)
+dickeyTest %>%
+as_hux() %>%
+  theme_article() %>% 
+  set_font_size(10) %>% 
+  set_col_width(1, 3) %>% 
+  set_align(1, everywhere, "left") %>% 
+  add_rownames() %>% 
+  set_caption("Augmented Dickey Fuller Tests \\label{tab:adf}") %>% 
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+
+```
+
+```{r PPResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/time_series_data.R")
+dset <- time_series_data(vecm_data)
+
+source("code/pp_test.R")
+pp <- pp_test(dset)
+library(broom)
+library(dplyr)
+
+Qpptest <- broom::tidy(pp[[1]])
+Ppptest <- broom::tidy(pp[[2]])
+Ypptest <- broom::tidy(pp[[3]])
+
+ppTest <- as.data.frame(bind_rows(Qpptest, Ppptest, Ypptest)) 
+ppTest <- ppTest[,-3]
+ppTest <- ppTest[,-3]#remove the third column from the dataframe
+rownames(ppTest) = c("Quantity legal cigarettes", "Price ratio", "Disposable income")
+colnames(ppTest)[0] <- "rowname"
+
+library(huxtable)
+ppTest %>% 
+as_hux() %>% 
+  theme_article() %>% 
+  set_font_size(10) %>% 
+  set_col_width(1, 3) %>% 
+  set_align(1, everywhere, "left") %>% 
+  add_rownames() %>% 
+  set_caption("Phillips-Perron Unit Root Test \\label{tab:pp}") %>% 
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+```
+
+```{r KPSSResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/time_series_data.R")
+dset <- time_series_data(vecm_data)
+
+source("code/kpss_test.R")
+kp <- kpss_test(dset)
+library(broom)
+library(dplyr)
+
+Qpptest <- broom::tidy(kp[[1]])
+Ppptest <- broom::tidy(kp[[2]])
+Ypptest <- broom::tidy(kp[[3]])
+
+kpTest <- as.data.frame(bind_rows(Qpptest, Ppptest, Ypptest)) 
+kpTest <- kpTest[,-3]
+kpTest <- kpTest[,-3] #remove the third column from the dataframe
+rownames(kpTest) = c("Quantity legal cigarettes", "Price ratio", "Disposable income")
+colnames(kpTest)[0] <- ""
+alternative <- c("non-stationary", "non-stationary", "non-stationary")
+kpTest$alternative <- alternative
+
+library(huxtable)
+kpTest %>% 
+as_hux() %>% 
+  theme_article() %>% 
+  add_rownames() %>% 
+  set_font_size(10) %>% 
+  set_col_width(1, 3) %>% 
+  set_align(1, everywhere, "left") %>% 
+  set_caption("KPSS Unit Root Test \\label{tab:kp}") %>% 
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+```
+
+```{r AdfdiffResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/time_series_data.R")
+dset <- time_series_data(vecm_data)
+
+source("code/adf_test_diff.R")
+adfdiff <- adf_test_diff(dset)
+library(broom)
+library(dplyr)
+
+Qadftestdiff <- broom::tidy(adfdiff[[1]])
+Padftestdiff <- broom::tidy(adfdiff[[2]])
+Yadftestdiff <- broom::tidy(adfdiff[[3]])
+
+adfTestDiff <- as.data.frame(bind_rows(Qadftestdiff, Padftestdiff, Yadftestdiff)) 
+adfTestDiff <- adfTestDiff[,-3]
+adfTestDiff <- adfTestDiff[,-3] 
+rownames(adfTestDiff) = c("Quantity legal cigarettes", "Price ratio", "Disposable income")
+
+adfTestDiff <- adfTestDiff %>%                 
+  mutate_if(is.numeric,
+            round,
+            digits = 2)
+
+library(huxtable)
+adfTestDiff  %>% 
+as_hux() %>% 
+  theme_article() %>%
+    add_rownames() %>% 
+  set_font_size(10) %>% 
+  set_col_width(1, 3) %>% 
+  set_align(1, everywhere, "left") %>% 
+  set_caption("ADF Test for Differenced Series \\label{adfdiff}") %>% 
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+
+```
+
+```{r PPdiffResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/time_series_data.R")
+dset <- time_series_data(vecm_data)
+
+source("code/pp_test_diff.R")
+ppdiff <- pp_test_diff(dset)
+library(broom)
+library(dplyr)
+
+Qpptestdiff <- broom::tidy(ppdiff[[1]])
+Ppptestdiff <- broom::tidy(ppdiff[[2]])
+Ypptestdiff <- broom::tidy(ppdiff[[3]])
+
+ppTestDiff <- as.data.frame(bind_rows(Qpptestdiff, Ppptestdiff, Ypptestdiff)) 
+ppTestDiff <- ppTestDiff[,-3]
+ppTestDiff <- ppTestDiff[,-3] 
+rownames(ppTestDiff) = c("Quantity legal cigarettes", "Price ratio", "Disposable income")
+colnames(ppTestDiff)[0] <- ""
+
+library(huxtable)
+ppTestDiff  %>% 
+as_hux() %>% 
+  theme_article() %>% 
+  add_rownames() %>% 
+  set_font_size(10) %>% 
+  set_col_width(1, 3) %>% 
+  set_align(1, everywhere, "left") %>% 
+  set_caption("Phillips-Perron Unit Root Test for Differenced Series \\label{ppdiff}") %>% 
+  set_all_padding(2)%>% 
+  set_outer_padding(3)
+```
+
+```{r KPSSdiffResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/time_series_data.R")
+dset <- time_series_data(vecm_data)
+
+source("code/kpss_test_diff.R")
+kpdiff <- kpss_test_diff(dset)
+library(broom)
+library(dplyr)
+
+Qkptestdiff <- broom::tidy(kpdiff[[1]])
+Pkptestdiff <- broom::tidy(kpdiff[[2]])
+Ykptestdiff <- broom::tidy(kpdiff[[3]])
+
+kpTestDiff <- as.data.frame(bind_rows(Qkptestdiff, Pkptestdiff, Ykptestdiff)) 
+kpTestDiff <- kpTestDiff[,-3]
+kpTestDiff <- kpTestDiff[,-3] 
+rownames(kpTestDiff) = c("Quantity legal cigarettes", "Price ratio", "Disposable income")
+colnames(kpTestDiff)[0] <- ""
+alternative <- c("non-stationary", "non-stationary", "non-stationary")
+kpTestDiff$alternative <- alternative
+
+library(huxtable)
+kpTestDiff  %>% 
+as_hux() %>% 
+  theme_article() %>% 
+  add_rownames() %>% 
+  set_font_size(10) %>% 
+  set_col_width(1, 3) %>% 
+  set_align(1, everywhere, "left") %>% 
+  set_caption("KPSS Stationarity Test for Differenced Series \\label{kpssdiff}") %>% 
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+```
+
+
+\clearpage
+
+# Johansen Cointegration Tests 
+
+```{r Coint_trace, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/time_series_data.R")
+dset <- time_series_data(vecm_data)
+
+source("code/coint_trace.R")
+cointTrace <- coint_trace(dset)
+library(broom)  
+library(dplyr)
+
+
+library(huxtable)
+cointTrace  %>% 
+as_hux() %>% 
+  theme_article() %>% 
+  add_rownames() %>% 
+  set_font_size(10) %>% 
+  set_col_width(2, 3) %>% 
+  set_align(1, everywhere, "left") %>% 
+  set_caption("Johansen Trace Test for Cointegration \\label{trace}") %>%
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+
+```
+
+```{r Coint_eigen, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/time_series_data.R")
+dset <- time_series_data(vecm_data)
+
+source("code/coint_eigen.R")
+cointEigen <- coint_eigen(dset)
+library(broom)  
+library(dplyr)
+
+library(huxtable)
+cointEigen  %>% 
+as_hux() %>% 
+  theme_article() %>% 
+  add_rownames() %>% 
+  set_font_size(10) %>% 
+  set_col_width(2, 3) %>% 
+  set_align(1, everywhere, "left") %>% 
+  set_caption("Johansen Eigen Test for Cointegraion \\label{trace}") %>%
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+```
