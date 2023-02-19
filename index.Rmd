@@ -1,6 +1,7 @@
 ---
 output: 
   pdf_document:
+    # latex_engine: "xelatex"
     citation_package: natbib
     template: template.tex
     toc: true
@@ -12,6 +13,7 @@ bibliography: mybib.bib
 documentclass: memoir
 lang: afrikaans, english
 fontsize: 12pt
+# papersize: a4
 papersize: letter
 classoption: oneside, openany
 margin-ratio: goldenblock

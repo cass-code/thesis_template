@@ -13,7 +13,7 @@ coint_trace <- function(dset){
   traceSumm <- summary(cjtestTrace)
   teststats <- data.frame(traceSumm@teststat)
   c<- data.frame(traceSumm@cval)
-  f <- data.frame(teststats, c) %>% rename("Test Statistic" = traceSumm.teststat, "10%" = X10pct, "5%" = X5pct, "1%" = X1pct)
+  f <- data.frame(teststats, c) %>% rename("Statistic" = traceSumm.teststat, "10%" = X10pct, "5%" = X5pct, "1%" = X1pct)
   row.names(f) <- c("r<=2", "r<=1", "r=0")
   f
 }

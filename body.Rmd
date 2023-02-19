@@ -1,6 +1,7 @@
 ---
 output:
-   pdf_document
+   pdf_document:
+    latex_engine: "xelatex"
 ---
 
 # Introduction
@@ -10,7 +11,9 @@ This study examines the relationship between the legal and illegal tobacco marke
 
 # The Illicit Tobacco Market
 
-The health problems associated with tobacco consumption are significant and have been well-documented (Tingum et al, 2020:62). Worldwide, smoking is one of the leading causes of preventable deaths; and in South Africa 23% of the total deaths in 2018 were smoking-related (Statistics South Africa). Given the large and negative impact of smoking, the tobacco market has come under increasing scrutiny by governments and health organizations. A significant component of the tobacco market is the illicit cigarette trade, which the Financial Action Task Force (2012:7) defines as “…the supply, distribution and sale of smuggled genuine, counterfeit or cheap white tobacco products.”
+The health problems associated with tobacco consumption are significant and have been well-documented (Tingum et al, 2020:62). Worldwide, smoking is one of the leading causes of preventable deaths; and in South Africa 23% of the total deaths in 2018 were smoking-related (Statistics South Africa). Given the large and negative impact of smoking, the tobacco market has come under increasing scrutiny by governments and health organizations. A significant component of the tobacco market is the illicit cigarette trade, which the Financial Action Task Force (2012:7) defines as 
+
+> “…the supply, distribution and sale of smuggled genuine, counterfeit or cheap white tobacco products.”
 
 The illicit tobacco market gives rise to concern on three main fronts: public health, tax evasion, and criminal activity. From a public health perspective, illicit cigarettes make smoking more affordable and thereby increases tobacco access (van der Zee et al, 2019:242). Cheaper cigarettes may induce non-smokers to smoke, increase the volume of cigarettes consumed by smokers, and decrease the likelihood that smokers will quit smoking (Pechacek et al, 2018:pagenumber; van der Zee et al, 2019:242).
 
@@ -59,23 +62,19 @@ time_series_plots(log_data)
 
 To test whether the series are stationary, three tests were employed: the Augmented Dickey-Fuller (ADF), and Phillip-Perron (PP) unit root tests, and the Kwiatkowski–Phillips–Schmidt–Shin (KPSS) stationarity test. The results of the ADF and PP tests in figures \ref{tab:adf} and \ref{tab:pp} (presented in appendix \ref{appendixA}) show that the log of the real price ratio and the log of real per capita disposable income series are non-stationary at the 5% level of significance.
 
+
 Both the ADF and PP tests reject the null hypothesis that the log of quantity of legal cigarettes consumed contains a unit root at a 5% level of significance. The ADF test p-values at a 5% significance level for the quantity of legal cigarettes, price ratio, and disposable income are 0.01, -1.44, and 0.81 respectively. The PP test p-values are 0.01, -2.54, and 0.412 respectively. The KPSS test (figure \ref{tab:kp}) rejected the null hypothesis of stationarity for all three variables with a p-value of 0.01 for each variable. Based on the KPSS test, each one of the variables is assumed to be non-stationary in levels.
 
-However, after first differencing each of the series, all three tests indicate that the variables are stationary at a 5% level of significance. The ADF and PP tests reject the null hypothesis that the series contain a unit root after they have been differenced, as shown in tables \ref{adfdiff} and \ref{ppdiff}. The KPSS test fails to reject the null hypothesis of stationarity for the differenced series with p-values of 0.1 for every variabe as shown in table \ref{kpssdiff}. Given that the series are non-stationary in levels and are stationary in first differences, a cointegration approach can be used to test for the existence of a long-run relationship among the variables.
+
+However, after first differencing each of the series, all three tests indicate that the variables are stationary at a 5% level of significance. The ADF and PP tests reject the null hypothesis that the series contain a unit root after they have been differenced, as shown in tables \ref{adfdiff} and \ref{ppdiff}. The KPSS test fails to reject the null hypothesis of stationarity for the differenced series with p-values of 0.1 for every variabe as shown in table \ref{kpssdiff}. Given that the series are non-stationary in levels and are stationary in first differences, a cointegration approach can be used to check whether a long-run relationship exists among the variables.
+
+To test for conintegrating relationships, two tests were employed:
+the Johansen Trace test for Cointegration, and the Johansen Maximum Eigenvalue test for Cointegration.
 
 
+The Johansen Trace Test for Cointegration indicates that there is one cointegrating vector. As shown in table \ref{trace}, the test statistic of 44.1 is larger than 41.1 (the critical value at a 1% level of significance). Thus, the null hypothesis is rejected, where the null hypothesis is that there are zero cointegrating vectors. However, the test statistic 10.2 is lower than 17.9 (the critical value at a 10% level of significance). This means that the null hypothesis cannot be rejected even at a 10% signicance level, where the null hypothesis is that there is 1 or fewer cointegrating vectors. 
 
-
-
-
-
-
-Cointegration was then tested using the Trace and the Maximum Eigenvalue
-tests.29
-
-
-\newpage
-\clearpage
+The results of the Johansen Maximum Eigenvalue test are presented in table \ref{eigen}. Similar to the Trace test, the Maximum Eigenvalue test shows that there is a single cointegrating vector. The test statistic 33.9 exceeds the critical value of 26.8 at a 1% level of significance. Therefore the null hypothesis - that there is no conintegration - is rejected at a 1% significance level. However, the null hypothesis that there is 1 or fewer cointegrating relationships cannot be rejected, even at a 10% significance level. Here, the test statistics of 8.48 lies below the 10% critical value of 13.8.
 
 ## Vector Error Correction Model \label{vecm}
 

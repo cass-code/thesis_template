@@ -13,7 +13,6 @@ coint_eigen <- function(dset){
   eigenSumm <- summary(cjtestEigen)
   teststats <- data.frame(eigenSumm@teststat)
   eigendata <- data.frame(eigenSumm@cval)
-  eigenFinal <- data.frame(teststats, eigendata) %>% rename("Test Statistic" = eigenSumm.teststat, "10%" = X10pct, "5%" = X5pct, "1%" = X1pct)
-  row.names(eigenFinal) <- c("r<=2", "r<=1", "r=0")
+  eigenFinal <- data.frame(teststats, eigendata) %>% rename("Statistic" = eigenSumm.teststat, "10%" = X10pct, "5%" = X5pct, "1%" = X1pct)
   eigenFinal
 } 
