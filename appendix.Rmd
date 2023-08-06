@@ -1,26 +1,54 @@
-# Stationarity Testing \label{appendixA}
+# Time Series Data \label{appendixA1}
 
-```{r ADFResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
-source("code/time_series_data.R")
-dset <- time_series_data(vecm_data)
+## Time series logged graphs \label{appendixLog}
 
-source("code/adf_test.R")
-dickeyFuller <- adf_test(dset)
-library(broom)
+```{r loggraphs, fig.height = 4.5, echo=FALSE, warning=FALSE, message=FALSE, fig.cap = "Plot for variables at levels \\label{fig:plotLog}"}
+source("code/time_series_plots_log.R")
+time_series_plots_log(log_data)
+```
 
-Qadftest <- broom::tidy(dickeyFuller[[1]])
-Padftest <- broom::tidy(dickeyFuller[[2]])
-Yadftest <- broom::tidy(dickeyFuller[[3]])
+## Seasonality decomposition \label{seasonGraph}
 
-dickeyTest <- as.data.frame(bind_rows(Qadftest, Padftest, Yadftest))
-dickeyTest <- dickeyTest[,-3]
-dickeyTest <- dickeyTest[,-3]
-rownames(dickeyTest) = c("Quantity legal cigarettes", "Price ratio", "Disposable income")
-rownames <- c("Quantity legal cigarettes", "Price ratio", "Disposable income")
-colnames(dickeyTest) <- c("Statistic", "p-value", "Alternative")
+```{r seasonGraphs, fig.height = 4.5, echo=FALSE, warning=FALSE, message=FALSE, fig.cap = "Decomposisiton and seasonality for quantity of legal cigarettes series\\label{fig:SeasonPlot}"}
+source("code/seasonal_plot.R")
+seasonal_plot(dsetYRdummy)
+```
+
+## Structural breakpoint test \label{breakpointtest}
+```{r structest, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/struc_test.R")
+structable <- struc_test(dsetYRdummy)
 
 library(huxtable)
-dickeyTest %>%
+structable %>%
+as_hux() %>%
+  style_headers(., bold = TRUE) %>%
+  set_header_rows(FALSE) %>% 
+  set_header_cols(FALSE) %>% 
+  set_number_format(NA) %>% 
+  set_font_size(12) %>% 
+  set_col_width(1, 3) %>% 
+  set_bottom_border(., row = 1, col =2-3) %>% 
+  set_top_border(., row = 1, col = 2-3) %>% 
+  set_bottom_border(., row =2, col = everywhere) %>%
+  set_align(1-2-3-4, everywhere, "left") %>% 
+  set_caption("Chow structural break test for Real Price Ratio time series\\label{tab:struc}") %>% 
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+```
+
+# Stationarity Testing \label{appendixB}
+
+```{r ADFResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/adf_test.R")
+dickeyFuller <- adf_test(dsetYRdummy)
+
+rownames(dickeyFuller) = c("Quantity legal cigarettes", "Price ratio", "Disposable income")
+colnames(dickeyFuller) <- c("Test statistic", "1%", "5%", "10%")
+dickeyFuller$Alternative <- c("stationary", "stationary", "stationary")
+
+library(huxtable)
+dickeyFuller %>%
 as_hux(add_colnames = FALSE) %>%
   add_colnames("", "Statistic", "p-value", "Alternative") %>%
   style_headers(., bold = TRUE) %>% 
@@ -36,7 +64,6 @@ as_hux(add_colnames = FALSE) %>%
   set_caption("Augmented Dickey Fuller Tests \\label{tab:adf}") %>% 
   set_all_padding(2) %>% 
   set_outer_padding(3)
-
 ```
 
 ```{r PPResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
@@ -117,32 +144,47 @@ as_hux(add_colnames = FALSE) %>%
   set_outer_padding(3)
 ```
 
-```{r AdfdiffResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
-source("code/time_series_data.R")
-dset <- time_series_data(vecm_data)
+```{r strucResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/unit_struc_test.R")
+strucResults <- unit_struc_test(dsetYRdummy)
 
-source("code/adf_test_diff.R")
-adfdiff <- adf_test_diff(dset)
-library(broom)
-library(dplyr)
-
-Qadftestdiff <- broom::tidy(adfdiff[[1]])
-Padftestdiff <- broom::tidy(adfdiff[[2]])
-Yadftestdiff <- broom::tidy(adfdiff[[3]])
-
-adfTestDiff <- as.data.frame(bind_rows(Qadftestdiff, Padftestdiff, Yadftestdiff)) 
-adfTestDiff <- adfTestDiff[,-3]
-adfTestDiff <- adfTestDiff[,-3] 
-rownames(adfTestDiff) = c("Quantity legal cigarettes", "Price ratio", "Disposable income")
-colnames(adfTestDiff) <- c("Statistic", "p-value", "Alternative")
-
-adfTestDiff <- adfTestDiff %>%                 
-  mutate_if(is.numeric,
-            round,
-            digits = 2)
+statStruc <- as.data.frame(strucResults[[1]])
+critStruc <- t(as.data.frame(strucResults[[2]]))
+Pratio <- c("Price ratio")
+Alternative <- c("stationary")
+strucData <- bind_cols(Pratio, statStruc, critStruc, Alternative)
+colnames(strucData) <- c("","Test statistic", "1%", "5%", "10%", "Alternative")
 
 library(huxtable)
-adfTestDiff  %>% 
+strucData %>%
+  as_hux(add_colnames = FALSE, add_rownames = FALSE) %>%
+  add_colnames("", "Test statistic", "1%", "5%", "10%", "Alternative") %>%
+  #add_rownames("Price ratio") %>% 
+  style_headers(., bold = TRUE) %>% 
+  #set_header_rows(., 0, TRUE) %>% 
+  set_header_cols(FALSE) %>% 
+  set_font_size(10) %>% 
+  set_col_width(1, 3) %>% 
+ set_bottom_border(., row = 1, col = 2-3) %>% 
+  set_top_border(., row = 1, col = 2-3) %>% 
+  set_bottom_border(., row = 2, col = everywhere) %>% 
+  set_align(1-2-3-4, everywhere, "left") %>%
+  set_caption("Zivot-Andrews Unit Root Test \\label{tab:zivot}") %>%
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+```
+
+```{r AdfdiffResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+
+source("code/adf_test_diff.R")
+dickeyFuller <- adf_test_diff(dsetYRdummy)
+
+rownames(dickeyFuller) = c("Quantity legal cigarettes", "Price ratio", "Disposable income")
+colnames(dickeyFuller) <- c("Test statistic", "1%", "5%", "10%")
+dickeyFuller$Alternative <- c("stationary", "stationary", "stationary")
+
+library(huxtable)
+dickeyFuller %>%
 as_hux(add_colnames = FALSE) %>%
   add_colnames("", "Statistic", "p-value", "Alternative") %>%
   style_headers(., bold = TRUE) %>% 
@@ -155,10 +197,9 @@ as_hux(add_colnames = FALSE) %>%
   set_top_border(., row = 1, col = 2-3) %>% 
   set_bottom_border(., row = 4, col = everywhere) %>% 
   set_align(1-2-3-4, everywhere, "left") %>% 
-  set_caption("ADF Test for Differenced Series \\label{adfdiff}") %>% 
+  set_caption("Augmented Dickey Fuller Tests \\label{tab:adfDiff}") %>% 
   set_all_padding(2) %>% 
   set_outer_padding(3)
-
 ```
 
 ```{r PPdiffResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
@@ -194,7 +235,7 @@ as_hux(add_colnames = FALSE) %>%
   set_top_border(., row = 1, col = 2-3) %>% 
   set_bottom_border(., row = 4, col = everywhere) %>% 
   set_align(1-2-3-4, everywhere, "left") %>% 
-  set_caption("Phillips-Perron Unit Root Test for Differenced Series \\label{ppdiff}") %>% 
+  set_caption("Phillips-Perron Unit Root Test for Differenced Series \\label{tab:ppDiff}") %>% 
   set_all_padding(2)%>% 
   set_outer_padding(3)
 ```
@@ -235,25 +276,49 @@ as_hux(add_colnames = FALSE) %>%
   set_top_border(., row = 1, col = 2-3) %>% 
   set_bottom_border(., row = 4, col = everywhere) %>% 
   set_align(1-2-3-4, everywhere, "left") %>% 
-  set_caption("KPSS Stationarity Test for Differenced Series \\label{kpssdiff}") %>% 
+  set_caption("KPSS Stationarity Test for Differenced Series \\label{tab:kpDiff}") %>% 
   set_all_padding(2) %>% 
   set_outer_padding(3)
 ```
 
-# Johansen Cointegration Tests 
+```{r strucResultsDiff, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/unit_struc_test_diff.R")
+strucResults <- unit_struc_test_diff(dsetYRdummy)
+
+statStruc <- as.data.frame(strucResults[[1]])
+critStruc <- t(as.data.frame(strucResults[[2]]))
+Pratio <- c("Price ratio")
+Alternative <- c("stationary")
+strucData <- bind_cols(Pratio, statStruc, critStruc, Alternative)
+colnames(strucData) <- c("","Test statistic", "1%", "5%", "10%", "Alternative")
+
+library(huxtable)
+strucData %>%
+  as_hux(add_colnames = FALSE, add_rownames = FALSE) %>%
+  add_colnames("", "Test statistic", "1%", "5%", "10%", "Alternative") %>%
+  #add_rownames("Price ratio") %>% 
+  style_headers(., bold = TRUE) %>% 
+  #set_header_rows(., 0, TRUE) %>% 
+  set_header_cols(FALSE) %>% 
+  set_font_size(10) %>% 
+  set_col_width(1, 3) %>% 
+ set_bottom_border(., row = 1, col = 2-3) %>% 
+  set_top_border(., row = 1, col = 2-3) %>% 
+  set_bottom_border(., row = 2, col = everywhere) %>% 
+  set_align(1-2-3-4, everywhere, "left") %>%
+  set_caption("Zivot-Andrews Unit Root Test \\label{tab:zivotDiff}") %>%
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+ 
+```
+
+# Cointegration Tests \label{appendixC}
 
 ```{r Cointegration_trace, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
-source("code/time_series_data.R")
-dset <- time_series_data(vecm_data)
-
 source("code/coint_trace.R")
-cointTrace <- coint_trace(dset)
+cointTrace <- coint_trace(dsetYRdummy)
 library(broom)  
 library(dplyr)
-
-
-row.names(cointTrace) <- c("r<=2", "r<=1", "r=0")
-
 
 library(huxtable)
 cointTrace  %>% 
@@ -267,7 +332,7 @@ as_hux(add_colnames = FALSE) %>%
   set_col_width(1, 3) %>% 
   set_bottom_border(., row = 1, col = 2-3) %>% 
   set_top_border(., row = 1, col = 2-3) %>% 
-  set_bottom_border(., row = 4, col = everywhere) %>% 
+  set_bottom_border(., row = 5, col = everywhere) %>% 
   set_align(1-2-3-4, everywhere, "left") %>%
   set_caption("Johansen Trace Test \\label{trace}") %>%
   set_all_padding(2) %>% 
@@ -280,9 +345,9 @@ source("code/time_series_data.R")
 dset <- time_series_data(vecm_data)
 
 source("code/coint_eigen.R")
-cointEigen <- coint_eigen(dset)
+cointEigen <- coint_eigen(dsetYRdummy)
 
-row.names(cointEigen) <- c("r<=2", "r<=1", "r=0")
+row.names(cointEigen) <- c("r<=3", "r<=2", "r<=1", "r=0")
 
 library(broom)  
 library(dplyr)
@@ -299,9 +364,337 @@ as_hux(add_colnames = FALSE) %>%
   set_col_width(1, 3) %>% 
   set_bottom_border(., row = 1, col = 2-3) %>% 
   set_top_border(., row = 1, col = 2-3) %>% 
-  set_bottom_border(., row = 4, col = everywhere) %>% 
+  set_bottom_border(., row = 5, col = everywhere) %>% 
   set_align(1-2-3-4, everywhere, "left") %>% 
   set_caption("Johansen Maximum Eigenvalue Test \\label{eigen}") %>%
   set_all_padding(2) %>% 
   set_outer_padding(3)
 ```
+
+```{r Cointegration_struc, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+# 
+# source("code/coint_trace.R")
+# cointStruc <- coint_trace(dsetYRdummy)
+# library(broom)  
+# library(dplyr)
+# 
+# library(huxtable)
+# cointStruc  %>% 
+# as_hux(add_colnames = FALSE) %>%
+#   add_colnames("", "Statistic", "p-value", "Alternative") %>%
+#   style_headers(., bold = TRUE) %>% 
+#   add_rownames() %>% 
+#   set_header_rows(., 0, TRUE) %>% 
+#   set_header_cols(FALSE) %>% 
+#   set_font_size(10) %>% 
+#   set_col_width(1, 3) %>% 
+#   set_bottom_border(., row = 1, col = 2-3) %>% 
+#   set_top_border(., row = 1, col = 2-3) %>% 
+#   set_bottom_border(., row = 5, col = everywhere) %>% 
+#   set_align(1-2-3-4, everywhere, "left") %>%
+#   set_caption("Cointegration test accounting for structural break \\label{cointStruc}") %>%
+#   set_all_padding(2) %>% 
+#   set_outer_padding(3)
+```
+
+# Vector Error Correction Results \label{appendixD}
+
+```{r VecmResults1, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+# library(tidyr)
+# 
+# source("code/time_series_data.R")
+# dset <- time_series_data(vecm_data)
+# 
+# source("code/vecm_tsDyn.R")
+# vecm2 <- VECM_tsDyn(dset)
+# source("code/tidy_vecm_results.R")
+# tidy_vecm <- tidy_vecm_results(vecm2)
+# vecm_shortrun <- tidy_vecm[[1]]
+# vecm_longrun <- tidy_vecm[[2]]
+# 
+# # Cleaning the short results to put into a table 
+# shorter <- as.data.frame(vecm_shortrun)
+# brackets <- as.data.frame(apply(shorter, c(1,2), function(y) gsub('\\(',',\\(', y))) #adding a delimiter to separate the standard error and coefficient
+# brackets <- as.data.frame(apply(brackets, c(1,2), function(y) gsub('\\)','\\);', y))) #adding a delimiter to separate the standard error and stars ***
+# shorttt <- brackets %>% tidyr::separate_rows(ECT, Intercept, `QDP -1`, `PRATIO -1`, `REAL -1`, sep = ",") #separating standard error
+# shortt <- shorttt %>% tidyr::separate_rows(ECT, Intercept, `QDP -1`, `PRATIO -1`, `REAL -1`, sep = ";") #separating stars
+# trans <- as.data.frame(t(shortt))
+# united <- tidyr::unite(trans,col = 'coeff', c('V1', 'V3'), sep="", remove = TRUE)
+# united <- tidyr::unite(united,col = 'coefficien', c('V4', 'V6'), sep="", remove = TRUE)
+# united <- tidyr::unite(united,col = 'coefff', c('V7', 'V9'), sep="", remove = TRUE)
+# 
+# trans1 <- as.data.frame(t(united))
+# r = c("Quantity legal cigarettes", "", "Price ratio", "", "Disposable income", "")
+# trans2 <- cbind(r, trans1)
+# rownames(vecm_longrun) = c("Quantity legal cigarettes", "Price ratio", "Disposable income")
+# colnames(trans2) = c(" ", "ECT", "Intercept", "Legal quantity", "Price ratio", "Disposable income")
+# colnames(vecm_longrun) = c("Cointegrating vector")
+# newroww <- c(" ", " ", " ", "lag (1)", "lag (1)", "lag (1)")
+# 
+# longgnames <- c("Quantity legal cigarettes", "Price ratio", "Disposable income")
+# vecm_longrun1 <- cbind(longgnames, vecm_longrun)
+# colnames(vecm_longrun1) <- c(" ","Cointegrating vector")
+# 
+# trans3 <- rbind(newroww, trans2)
+# 
+# library(huxtable)
+# vecm_longrun1 %>%
+# as_hux(add_colnames = FALSE) %>%
+#   add_colnames(" ", "Long run coefficient") %>%
+#   style_headers(., bold = TRUE) %>%
+#   #set_header_rows(FALSE) %>% 
+#   #set_header_cols(FALSE) %>% 
+#   set_font_size(10) %>% 
+#   set_col_width(1, 3) %>% 
+#   set_bottom_border(., row = 1, col = 2) %>% 
+#   set_top_border(., row = 1, col = 2) %>% 
+#   set_bottom_border(., row = 4, col = everywhere) %>% 
+#   set_align(1-2-3-4, everywhere, "left") %>% 
+#   set_caption("Vector Error Correction Model \\label{tab:vecmlong}") %>% 
+#   set_all_padding(2) %>% 
+#   set_outer_padding(3)
+# 
+# library(huxtable)
+# trans3 %>%
+# as_hux(add_colnames = FALSE, add_rownames = FALSE) %>%
+#   add_colnames("", "", "ECT", "Intercept", "Legal quantity", "Price ratio", "Disposable income") %>%
+#   style_headers(., bold = TRUE) %>%
+#   set_header_rows(FALSE) %>% 
+#   set_header_cols(FALSE) %>% 
+#   set_font_size(10) %>% 
+#   set_col_width(1, 3) %>% 
+#   set_bottom_border(., row = 2, col = 7-8) %>% 
+#   set_top_border(., row = 1, col = 7-8) %>% 
+#   set_bottom_border(., row = 8, col = everywhere) %>% 
+#   set_align(1-2-3-4, everywhere, "left") %>% 
+#   set_caption("Vector Error Correction Model \\label{tab:vecmshort}") %>% 
+#   set_all_padding(2) %>% 
+#   set_outer_padding(3)
+
+```
+
+```{r VecmResultsSingle, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+# library(tidyverse)
+# source("code/time_series_data_short.R")
+# dset1 <- time_series_data_short(vecm_data)
+# 
+# source("code/vecm_tsDyn.R")
+# vecm2 <- VECM_tsDyn(dset1)
+# source("code/tidy_vecm_results.R")
+# tidy_vecm1 <- tidy_vecm_results(vecm2)
+# vecm_shortrun1 <- tidy_vecm1[[1]]
+# vecm_longrun1 <- tidy_vecm1[[2]]
+# 
+# library(huxtable)
+# 
+# ht <- hux(vecm_longrun1
+#       ) %>% huxtable::add_rownames()
+# 
+# bold(ht)[1,]           <- TRUE
+# bottom_border(ht)[1,]  <- 0.4
+# align(ht)[,2]          <- "right"
+# right_padding(ht)      <- 2
+# left_padding(ht)       <- 2
+# width(ht)              <- 0.9
+# number_format(ht)      <- 2
+# ht
+# 
+# ht <- hux(vecm_shortrun1
+#       ) %>% huxtable::add_rownames()
+# 
+# bold(ht)[1,]           <- TRUE
+# bottom_border(ht)[1,]  <- 0.4
+# align(ht)[,2]          <- "right"
+# right_padding(ht)      <- 2
+# left_padding(ht)       <- 2
+# width(ht)              <- 0.9
+# number_format(ht)      <- 2
+# 
+# ht
+```
+
+```{r VecmResults, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+# library(tidyr)
+# 
+# source("code/time_series_data.R")
+# dset <- time_series_data(vecm_data)
+# 
+# source("code/vecm_tsDyn.R")
+# vecm2 <- VECM_tsDyn(dset)
+# source("code/tidy_vecm_results.R")
+# tidy_vecm <- tidy_vecm_results(vecm2)
+# vecm_shortrun <- tidy_vecm[[1]]
+# vecm_longrun <- tidy_vecm[[2]]
+# 
+# # Cleaning the short results to put into a table 
+# shorter <- as.data.frame(vecm_shortrun)
+# brackets <- as.data.frame(apply(shorter, c(1,2), function(y) gsub('\\(',',\\(', y))) #adding a delimiter to separate the standard error and coefficient
+# brackets <- as.data.frame(apply(brackets, c(1,2), function(y) gsub('\\)','\\);', y))) #adding a delimiter to separate the standard error and stars ***
+# shorttt <- brackets %>% tidyr::separate_rows(ECT, Intercept, `QDP -1`, `PRATIO -1`, `REAL -1`, sep = ",") #separating standard error
+# shortt <- shorttt %>% tidyr::separate_rows(ECT, Intercept, `QDP -1`, `PRATIO -1`, `REAL -1`, sep = ";") #separating stars
+# trans <- as.data.frame(t(shortt))
+# united <- tidyr::unite(trans,col = 'coeff', c('V1', 'V3'), sep="", remove = TRUE)
+# united <- tidyr::unite(united,col = 'coefficien', c('V4', 'V6'), sep="", remove = TRUE)
+# united <- tidyr::unite(united,col = 'coefff', c('V7', 'V9'), sep="", remove = TRUE)
+# 
+# trans1 <- as.data.frame(t(united))
+# r = c("Quantity legal cigarettes", "", "Price ratio", "", "Disposable income", "")
+# trans2 <- cbind(r, trans1)
+# rownames(vecm_longrun) = c("Quantity legal cigarettes", "Price ratio", "Disposable income")
+# colnames(trans2) = c(" ", "ECT", "Intercept", "Legal quantity", "Price ratio", "Disposable income")
+# colnames(vecm_longrun) = c("Cointegrating vector")
+# newroww <- c(" ", " ", " ", "lag (1)", "lag (1)", "lag (1)")
+# 
+# longgnames <- c("Quantity legal cigarettes", "Price ratio", "Disposable income")
+# vecm_longrun1 <- cbind(longgnames, vecm_longrun)
+# colnames(vecm_longrun1) <- c(" ","Cointegrating vector")
+# 
+# trans3 <- rbind(newroww, trans2)
+# 
+# library(huxtable)
+# vecm_longrun1 %>%
+# as_hux(add_colnames = FALSE) %>%
+#   add_colnames(" ", "Long run coefficient") %>%
+#   style_headers(., bold = TRUE) %>%
+#   #set_header_rows(FALSE) %>% 
+#   #set_header_cols(FALSE) %>% 
+#   set_font_size(10) %>% 
+#   set_col_width(1, 3) %>% 
+#   set_bottom_border(., row = 1, col = 2) %>% 
+#   set_top_border(., row = 1, col = 2) %>% 
+#   set_bottom_border(., row = 4, col = everywhere) %>% 
+#   set_align(1-2-3-4, everywhere, "left") %>% 
+#   set_caption("Vector Error Correction Model \\label{tab:vecmlong}") %>% 
+#   set_all_padding(2) %>% 
+#   set_outer_padding(3)
+# 
+# library(huxtable)
+# trans3 %>%
+# as_hux(add_colnames = FALSE, add_rownames = FALSE) %>%
+#   add_colnames("", "", "ECT", "Intercept", "Legal quantity", "Price ratio", "Disposable income") %>%
+#   style_headers(., bold = TRUE) %>%
+#   set_header_rows(FALSE) %>% 
+#   set_header_cols(FALSE) %>% 
+#   set_font_size(10) %>% 
+#   set_col_width(1, 3) %>% 
+#   set_bottom_border(., row = 2, col = 7-8) %>% 
+#   set_top_border(., row = 1, col = 7-8) %>% 
+#   set_bottom_border(., row = 8, col = everywhere) %>% 
+#   set_align(1-2-3-4, everywhere, "left") %>% 
+#   set_caption("Vector Error Correction Model \\label{tab:vecmshort}") %>% 
+#   set_all_padding(2) %>% 
+#   set_outer_padding(3)
+
+```
+
+```{r vecmFinal, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/vecm_final.R")
+
+vecm_output <- vecm_final(dsetYRdummy)
+#print(vecm_output)
+vecm_sum <- summary(vecm_output$rlm)
+vecm_sum_beta <- vecm_output$beta
+vecm_sum_beta <- as.data.frame(vecm_sum_beta)
+vecm_sum_beta <- vecm_sum_beta %>% rename("Long run coefficient" = "ect1")
+rownames(vecm_sum_beta) <- c("Quantity cigarettes", "Price ratio", "Real income", "Structural change", "Constant")
+
+library(huxtable)
+vecm_sum_beta %>%
+as_hux(add_colnames = FALSE) %>%
+  add_colnames(" ", "Long run coefficient") %>%
+  add_rownames("Quantity Cigarettes" = "log_QDP.l3") %>% 
+  style_headers(., bold = TRUE) %>%
+  set_header_rows(FALSE) %>% 
+  set_header_cols(FALSE) %>% 
+  set_font_size(12) %>% 
+  set_col_width(1, 3) %>% 
+  set_bottom_border(., row = 1, col = 2) %>% 
+  set_top_border(., row = 2, col = 2) %>% 
+  set_bottom_border(., row = 6, col = everywhere) %>% 
+  # set_align(1-2-3-4, everywhere, "left") %>% 
+  set_caption("Vector Error Correction Model \\label{tab:Longvecm}") %>% 
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+
+#name columns for huxreg
+Quantity_Cigarettes <- vecm_sum[[1]]
+Price_ratio <- vecm_sum[[2]]                        
+Real_Income <- vecm_sum[[3]]
+Structural_change <- vecm_sum[[4]]
+
+aa <- huxreg(list( "Quantity Cigarettes" = Quantity_Cigarettes, "Price ratio" = Price_ratio, "Real income" = Real_Income, "Structural Change" = Structural_change), coefs = c("ECT"= "ect1", "Cigarette Quantity (lag 1)" ="log_QDP.dl1", "Price ratio (lag 1)" =  "log_PRATIO.dl1", "Real Income (lag 1)" =  "log_YR.dl1", "Structural change (lag 1)" =  "dummy.dl1",  "Cigarette Quantity (lag 2)" =  "log_QDP.dl2", "Price ratio (lag 2)" =  "log_PRATIO.dl2","Real Income (lag 1)" =  "log_YR.dl2", "Structural change (lag 2)" =  "dummy.dl2"), names = c("Quantity Cigarettes", "Price ratio", "Real income", "Structural change"))
+library(dplyr)
+aa %>% 
+   set_caption("Vector Error Correction Model Short run \\label{tab:Shortvecm}")
+```
+
+# Diagnostic Tests \label{appendixE}
+
+```{r ResidualGraphs, fig.height = 6, echo=FALSE, warning=FALSE, message=FALSE, fig.cap = "Plot of residuals  \\label{fig:residPlot}"}
+source("code/resid_plot.R")
+resid_plot(dsetYRdummy)
+```
+
+```{r diagnostics, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/resid_test.R")
+listTests <- resid_test(dsetYRdummy)
+
+#Serial
+serial <- as.data.frame(listTests[[1]]) 
+library(huxtable)
+serial %>%
+as_hux() %>%
+  #add_rownames("Quantity Cigarettes" = "log_QDP.l3") %>% 
+  style_headers(., bold = TRUE) %>%
+  set_header_rows(FALSE) %>% 
+  set_header_cols(FALSE) %>% 
+  set_font_size(12) %>% 
+  set_col_width(1, 3) %>% 
+  set_bottom_border(., row = 1, col =2-3) %>% 
+  set_top_border(., row = 1, col = 2-3) %>% 
+  set_bottom_border(., row =3, col = everywhere) %>%
+  set_align(1-2-3-4, everywhere, "left") %>% 
+  set_caption("Autocorrelation Test\\label{tab:serial}") %>% 
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+
+#ARCH
+ARCH <- as.data.frame(listTests[[2]]) 
+library(huxtable)
+ARCH %>%
+as_hux() %>%
+  style_headers(., bold = TRUE) %>%
+  set_header_rows(FALSE) %>% 
+  set_header_cols(FALSE) %>% 
+  set_number_format(NA) %>% 
+  set_font_size(12) %>% 
+  set_col_width(1, 3) %>% 
+  set_bottom_border(., row = 1, col =2-3) %>% 
+  set_top_border(., row = 1, col = 2-3) %>% 
+  set_bottom_border(., row =2, col = everywhere) %>%
+  set_align(1-2-3-4, everywhere, "left") %>% 
+  set_caption("ARCH test\\label{tab:arch}") %>% 
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+
+#Normality
+normal <- as.data.frame(listTests[[3]]) 
+library(huxtable)
+normal %>%
+as_hux() %>%
+  style_headers(., bold = TRUE) %>%
+  set_header_rows(FALSE) %>% 
+  set_header_cols(FALSE) %>% 
+  set_number_format(NA) %>% 
+  set_font_size(12) %>% 
+  set_col_width(1, 3) %>% 
+  set_bottom_border(., row = 1, col =2-3) %>% 
+  set_top_border(., row = 1, col = 2-3) %>% 
+  set_bottom_border(., row =2, col = everywhere) %>%
+  set_align(1-2-3-4, everywhere, "left") %>% 
+  set_caption("Normality test\\label{tab:normal}") %>% 
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+```
+
+

@@ -1,9 +1,10 @@
 time_series_plots_log <- function(log_data){
   library(tidyverse)
   library(dplyr)
+  library(tayloRswift)
   
   plotDataLog <- dplyr::select(log_data, c(DATE, log_QDP, log_PRDP, log_PRDNP, log_PRATIO, log_YR)) %>% 
-    rename(Year = DATE, "Quantity legal cigarettes (sticks, millions)" = log_QDP, "Illicit cigarette price (Rands)" = log_PRDNP, "Legal cigarette price (Rands)" = log_PRDP, "Price ratio (Legal/Illicit)" = log_PRATIO, "Real disposable income" = log_YR)
+    rename(Year = DATE, "Quantity legal cigarettes (sticks, millions)" = log_QDP, "Real illicit cigarette price (Rands)" = log_PRDNP, " Real legal cigarette price (Rands)" = log_PRDP, "Price ratio (Legal/Illicit)" = log_PRATIO, "Real disposable income" = log_YR)
   
   wihan_gathered_log <- plotDataLog %>% 
     gather(Variable, Value, 2:6)
@@ -12,6 +13,7 @@ time_series_plots_log <- function(log_data){
     ggplot(aes(x = Year, y = Value, color = Variable)) +
     geom_line(show.legend = FALSE) +
     theme_minimal() +
+    scale_color_taylor(palette = "taylorSwift") +
     facet_wrap(~Variable, ncol = 2, scales = "free_y") +
     labs(y = "") +
     theme(axis.title.y = element_blank(), 

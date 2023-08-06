@@ -1,116 +1,116 @@
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$paper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 
 %==== Graphics and Color ============================================
-  \usepackage{graphicx}%........................... Graphicx loaded in usthesis
+\usepackage{graphicx}%........................... Graphicx loaded in usthesis
 \usepackage{color}%.............................. Color setup
 \usepackage{eso-pic}%............................ Shipout commands for watermark
-\newcommand*{\WaterMark}[2][0.15\paperwidth]{%
-  \AddToShipoutPicture*{\AtTextCenter{%
-    \parbox[t]{0pt}{\makebox[0pt][c]{%
-      \includegraphics[width=#1]{#2}}}}}}
-                         
-                         \usepackage[masters-t, $if(margin-ratio)$$margin-ratio$,$endif$]{usthesis} % option to replace masters-t with PhD 
-                       $if(beamerarticle)$
-                         \usepackage{beamerarticle} % needs to be loaded first
-                       $endif$
-                         $if(fontfamily)$
-                         \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
-                       $else$
-                         \usepackage{lmodern}
-                       $endif$
-                         $if(linestretch)$
-                         \usepackage{setspace}
-                       \setstretch{$linestretch$}
-                       $endif$
-                         \usepackage{amssymb,amsmath}
-                       \usepackage{ifxetex,ifluatex}
-                       \usepackage{textcomp}
-                       \usepackage{bm}
-                       \usepackage{fixltx2e} % provides \textsubscript
-                       \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-                       \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
-                       \usepackage[utf8]{inputenc}
-                       $if(euro)$
-                         \usepackage{eurosym}
-                       $endif$
-                         \else % if luatex or xelatex
-                       $if(mathspec)$
-                         \ifxetex
-                       \usepackage{mathspec}
-                       \else
-                         \usepackage{unicode-math}
-                       \fi
-                       $else$
-                         \usepackage{unicode-math}
-                       $endif$
-                         \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-                       $for(fontfamilies)$
-                         \newfontfamily{$fontfamilies.name$}[$fontfamilies.options$]{$fontfamilies.font$}
-                       $endfor$
-                         $if(euro)$
-                         \newcommand{\euro}{€}
-                       $endif$
-                         $if(mainfont)$
-                         \setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
-                       $endif$
-                         $if(sansfont)$
-                         \setsansfont[$for(sansfontoptions)$$sansfontoptions$$sep$,$endfor$]{$sansfont$}
-                       $endif$
-                         $if(monofont)$
-                         \setmonofont[Mapping=tex-ansi$if(monofontoptions)$,$for(monofontoptions)$$monofontoptions$$sep$,$endfor$$endif$]{$monofont$}
-                       $endif$
-                         $if(mathfont)$
-                         $if(mathspec)$
-                         \ifxetex
-                       \setmathfont(Digits,Latin,Greek)[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
-                       \else
-                         \setmathfont[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
-                       \fi
-                       $else$
-                         \setmathfont[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
-                       $endif$
-                         $endif$
-                         $if(CJKmainfont)$
-                         \usepackage{xeCJK}
-                       \setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
-                       $endif$
-                         \fi
-                       % use upquote if available, for straight quotes in verbatim environments
-                       \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-                       % use microtype if available
-                       \IfFileExists{microtype.sty}{%
-                         \usepackage[$for(microtypeoptions)$$microtypeoptions$$sep$,$endfor$]{microtype}
-                         \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-                       }{}
-                       \PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
-                       $if(verbatim-in-note)$
-                         \usepackage{fancyvrb}
-                       $endif$
-                         \usepackage[unicode=true]{hyperref}
-                       \usepackage[capitalize]{cleveref} % delete if not working
-                       $if(colorlinks)$
-                         \PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
-                       $endif$
-                         \hypersetup{
-                           $if(title-meta)$
-                             pdftitle={$title-meta$},
-                             $endif$
-                               $if(author-meta)$
-                               pdfauthor={$author-meta$},
-                               $endif$
-                                 $if(keywords)$
-                                 pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
-                                 $endif$
-                                   $if(colorlinks)$
-                                   colorlinks=true,
-                                   linkcolor=$if(linkcolor)$$linkcolor$$else$Maroon$endif$,
-                                   citecolor=$if(citecolor)$$citecolor$$else$Blue$endif$,
-                                   urlcolor=$if(urlcolor)$$urlcolor$$else$Blue$endif$,
-                                   $else$
-                                     pdfborder={0 0 0},
-                                     $endif$
-                                       breaklinks=true}
-                       \urlstyle{same}  % don't use monospace font for urls
+    \newcommand*{\WaterMark}[2][0.15\paperwidth]{%
+        \AddToShipoutPicture*{\AtTextCenter{%
+                \parbox[t]{0pt}{\makebox[0pt][c]{%
+                    \includegraphics[width=#1]{#2}}}}}}
+
+\usepackage[masters-t, $if(margin-ratio)$$margin-ratio$,$endif$]{usthesis} % option to replace masters-t with PhD 
+$if(beamerarticle)$
+\usepackage{beamerarticle} % needs to be loaded first
+$endif$
+$if(fontfamily)$
+\usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
+$else$
+\usepackage{lmodern}
+$endif$
+$if(linestretch)$
+\usepackage{setspace}
+\setstretch{$linestretch$}
+$endif$
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{textcomp}
+\usepackage{bm}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
+  \usepackage[utf8]{inputenc}
+$if(euro)$
+  \usepackage{eurosym}
+$endif$
+\else % if luatex or xelatex
+$if(mathspec)$
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{unicode-math}
+  \fi
+$else$
+  \usepackage{unicode-math}
+$endif$
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+$for(fontfamilies)$
+  \newfontfamily{$fontfamilies.name$}[$fontfamilies.options$]{$fontfamilies.font$}
+$endfor$
+$if(euro)$
+  \newcommand{\euro}{€}
+$endif$
+$if(mainfont)$
+    \setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
+$endif$
+$if(sansfont)$
+    \setsansfont[$for(sansfontoptions)$$sansfontoptions$$sep$,$endfor$]{$sansfont$}
+$endif$
+$if(monofont)$
+    \setmonofont[Mapping=tex-ansi$if(monofontoptions)$,$for(monofontoptions)$$monofontoptions$$sep$,$endfor$$endif$]{$monofont$}
+$endif$
+$if(mathfont)$
+$if(mathspec)$
+  \ifxetex
+    \setmathfont(Digits,Latin,Greek)[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
+  \else
+    \setmathfont[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
+  \fi
+$else$
+  \setmathfont[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
+$endif$
+$endif$
+$if(CJKmainfont)$
+    \usepackage{xeCJK}
+    \setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
+$endif$
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[$for(microtypeoptions)$$microtypeoptions$$sep$,$endfor$]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+$if(verbatim-in-note)$
+\usepackage{fancyvrb}
+$endif$
+\usepackage[unicode=true]{hyperref}
+\usepackage[capitalize]{cleveref} % delete if not working
+$if(colorlinks)$
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+$endif$
+\hypersetup{
+$if(title-meta)$
+            pdftitle={$title-meta$},
+$endif$
+$if(author-meta)$
+            pdfauthor={$author-meta$},
+$endif$
+$if(keywords)$
+            pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
+$endif$
+$if(colorlinks)$
+            colorlinks=true,
+            linkcolor=$if(linkcolor)$$linkcolor$$else$Maroon$endif$,
+            citecolor=$if(citecolor)$$citecolor$$else$Blue$endif$,
+            urlcolor=$if(urlcolor)$$urlcolor$$else$Blue$endif$,
+$else$
+            pdfborder={0 0 0},
+$endif$
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
 $if(verbatim-in-note)$
 \VerbatimFootnotes % allows verbatim text in footnotes
 $endif$
@@ -291,18 +291,10 @@ $endif$
 %\renewcommand{\baselinestretch}{1.5}
 %\onehalfspacing
 \linespread{1.213}
-% \linespread{1.4}
 
 \begin{document}
  \frontmatter
-  \WaterMark{./images/logo.png}
- $if(title)$
- \TitlePage
- $endif$
-
-\begin{document}
- \frontmatter
-  \WaterMark{./images/logo.png}
+ \WaterMark{./images/sun_logo.png}
  $if(title)$
  \TitlePage
  $endif$
@@ -311,7 +303,6 @@ $endif$
 
 $if(abstract)$
 \input{$abstract$}
-\clearpage
 $endif$
 
 $if(acknowledgements)$

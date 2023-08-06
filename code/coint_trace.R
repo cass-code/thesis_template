@@ -1,5 +1,6 @@
-coint_trace <- function(dset){
+coint_trace <- function(dsetYRdummy){
   
+  dset <- dsetYRdummy
   library(urca)
   library(tidyverse)
   library(tseries)
@@ -9,11 +10,11 @@ coint_trace <- function(dset){
   # if we reject H0 for r<= 0 then it means we reject that there is are 0 or less than zero cointegrating relationships
   # both tests show that there is at least 1 cointegrating relationship
   
-  cjtestTrace <- ca.jo(dset, type = "trace", ecdet = "const", K=2) # for r<=1, test stat is 24.76 > 22.00 so reject at 5%
+  cjtestTrace <- ca.jo(dset, type = "trace", ecdet = "const", K=3) # for r<=1, test stat is 24.76 > 22.00 so reject at 5%
   traceSumm <- summary(cjtestTrace)
   teststats <- data.frame(traceSumm@teststat)
   c<- data.frame(traceSumm@cval)
   f <- data.frame(teststats, c) %>% rename("Statistic" = traceSumm.teststat, "10%" = X10pct, "5%" = X5pct, "1%" = X1pct)
-  row.names(f) <- c("r<=2", "r<=1", "r=0")
+  row.names(f) <- c("r<=3", "r<=2", "r<=1", "r=0")
   f
 }

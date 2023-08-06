@@ -8,3 +8,4 @@ VECM_tsDyn <- function(dset1){
   # Summarise the regression results and return them
   return(summary_vecm)
 }
+

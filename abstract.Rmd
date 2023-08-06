@@ -1,5 +1,5 @@
 \begin{abstract}[english]
-\noindent This paper investigates the constraint imposed on the legal tobacco market by the presence of illicit cigarettes.  You need to use \textbf{Latex syntax} in this environment. E.g. \cite{boshoff20} and Tschantz en Froeb \citeyearpar{app19}.
+\noindent Using monthly data This paper investigates the constraint imposed on the legal tobacco market by the presence of illicit cigarettes.
 
 This is the second paragraph of my English abstract.
 

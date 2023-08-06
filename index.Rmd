@@ -10,12 +10,16 @@ output:
     keep_tex: false
     fig_caption: true
 bibliography: mybib.bib
+# indent: false
+# documentclass: memoir
 documentclass: memoir
-lang: afrikaans, english
+# lang: afrikaans, english
+lang: english
 fontsize: 12pt
 # papersize: a4
 papersize: letter
 classoption: oneside, openany
+# geometry: margin=1.5in
 margin-ratio: goldenblock
 title: An Econometric Analysis of the Illicit South African Tobacco Market
 subtitle: An econometric analysis
@@ -32,7 +36,7 @@ faculty: Faculty of Economic and Management Sciences
 fakulteit: Fakulteit Ekonomiese en Bestuurswetenskappe
 supervisor: Prof.\ W.\ H. Boshoff
 year: 2023
-month: 4
+month: 8
 abstract: abstract.Rmd
 #acknowledgements: acknowledgements.Rmd
 lot: true
@@ -41,6 +45,7 @@ lof: true
 # loa: loa.Rmd
 header-includes:
 - \usepackage{subfig}
+- \setlength\parindent{0pt}\setlength{\parskip}{6pt plus 6pt minus 1pt}
 # - \usepackage{float}
 # - \usepackage{floatrow}
 # - \floatsetup[figure]{capposition=top}
@@ -56,7 +61,7 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo=FALSE,
                       fig.ext = 'png', dev = 'png', dpi = 600) 
 # adjust dpi for image quality/knit speed
 library(pacman)
-pacman::p_load(tidyverse, glue, huxtable, gridExtra, wesanderson, ggrepel, tsDyn, dplyr, zoo, dplyr, broom) 
+pacman::p_load(tidyverse, glue, huxtable, gridExtra, wesanderson, ggrepel, tsDyn, dplyr, zoo, dplyr, broom, seasonal, deseasonalize, ggplot, ggplot2, texreg) 
 # can load all packages here - don't need to include them separately in the other scripts and RMD files 
 ```
 

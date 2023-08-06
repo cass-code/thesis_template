@@ -1,16 +1,19 @@
-adf_test_diff <- function(dset){
+adf_test_diff <- function(dsetYRdummy){
   
-  library(tseries)
+  library(urca)
   
+  Qdiff <- diff(dsetYRdummy$log_QDP, differences = 1)
+  Pdiff <- diff(dsetYRdummy$log_PRATIO, differences = 1)
+  Ydiff <- diff(dsetYRdummy$log_YR, differences = 1)
   
-  Qdiff <- diff(dset[, 1], differences = 1)
-  Pdiff <- diff(dset[, 2], differences = 1)
-  Ydiff <- diff(dset[, 3], differences = 1)
+  Qadf <- summary(ur.df(Qdiff, type = "none", lags = 1, selectlags = "Fixed"))
+  Radf <- summary(ur.df(Pdiff, type = "none", lags = 1, selectlags = "Fixed"))
+  Yadf <- summary(ur.df(Ydiff, type = "none", lags = 1, selectlags = "Fixed"))
   
-  Q <- adf.test(Qdiff)
-  R <- adf.test(Pdiff)
-  Y <- adf.test(Ydiff)
+  QQ <- cbind(Qadf@teststat, Qadf@cval)
+  RR <- cbind(Radf@teststat, Radf@cval)
+  YY <- cbind(Yadf@teststat, Yadf@cval)
   
-  dickey_results <- list(Q, R, Y) 
-  return(dickey_results)
+  adfTestResults <- as.data.frame(rbind(QQ, RR, YY))
+  
 }
