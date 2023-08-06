@@ -43,7 +43,7 @@ Evidently, the public health and economic costs of tobacco use are extensive. In
 # Methodology \label{methodology}
 ## Theoretical Model \label{Model}
 
-This paper makes use of the demand model to estimate the effect of a relative price change, between licit and illicit cigarette price,on cigarette consumption in South Africa from January 2012 to March 2020. The relationship between cigarette consumption, price and income is well-documented (for example, see \citealp{boshoff2008}; \citealp{tingum2020}) and is typically expressed as:
+This paper makes use of the demand model to estimate the effect of a relative price change, between licit and illicit cigarette price,on cigarette consumption in South Africa from January 2012 to March 2020. The relationship between cigarette consumption, price and income is well-documented (for example, see \citet{boshoff2008}; \citet{tingum2020}; \citealp{who}) and is typically expressed as:
 
 \begin{align}
 Q_{t} = f(P_{t}, Y_{t}, D_{t}) \label{eqa}
@@ -63,7 +63,7 @@ For the model specification, the two price series are combined to form a single 
 
 The series are plotted in levels in figure \ref{fig:plot} below. The general downwards trend of the graph depicting the real price of legal cigarettes suggests that inflation has been outstripping nominal cigarette prices. Real legal prices decreased slightly over the period 2012 - 2018. On the other hand, real prices for illicit cigarettes remained fairly constant from 2012 until late 2014. Following a small and sharp uptick, illicit prices slowly decreased from late 2014 until November 2018 when prices increase rapidly. The real price ratio is generally flat from 2012 - 2016, and then trends upwards slightly, implying that real legal prices were decreasing more slowly than real illicit prices were decreasing over the same period. There is a sudden drop in the price ratio in November 2018, reflecting the spike in real illicit prices. The graphs of the respective logged series (shown in appendix \ref{appendixLog}) illustrate similar patterns.
 
-The plot of the real price ratio suggests that there is a structural break in the series, in late 2018. To test for this^[The test was conducted using the programming language *'R'*, using the *'strucchange'* package by \citet* {struc1} and \citet* {struc2}], the Chow structural test (based on the work by \citet* {chow1960}) is employed for November 2018; the results are presented in table \ref{tab:struc}. The p-value is less than 0.05; thus, the null hypothesis is rejected and there is sufficient evidence to conclude that the data contains a structural breakpoint. To control for this in the model, a dummy variable is used to capture the change in the illicit price (and therefore the price ratio) that occurred in November 2018. The variable is labelled '*Structural change*' and is coded 0 for periods before November 2018, and 1 otherwise.
+The plot of the real price ratio suggests that there is a structural break in the series, in late 2018. To test for this^[The test was conducted using the programming language *'R'*, using the *'strucchange'* package by \citet* {struc1} and \citet* {struc2}], the Chow structural test (based on the work by \citealp* {chow1960}) is employed for November 2018; the results are presented in table \ref{tab:struc}. The p-value is less than 0.05; thus, the null hypothesis is rejected and there is sufficient evidence to conclude that the data contains a structural breakpoint. To control for this in the model, a dummy variable is used to capture the change in the illicit price (and therefore the price ratio) that occurred in November 2018. The variable is labelled '*Structural change*' and is coded 0 for periods before November 2018, and 1 otherwise.
 
 The graph for the quantity of legal cigarettes in figure \ref{fig:plot} shows a general downwards trend from 2012 to March 2020, and the series exhibits strong signs of seasonality. The series is decomposed and its separate components are graphed in appendix \ref{seasonGraph}, which confirm the presence of seasonality. While the series could be seasonally adjusted to account for the seasonality, this may change the outcome of conventional unit root tests, according to \citealp{season}, and lead to bias in the estimation of relationships between series (\citealp* {seasonWilliam}:110). Therefore, this study uses the unaltered data for this consumption variable in the model estimation.
 
@@ -78,9 +78,9 @@ time_series_plots(log_data)
 \newpage
 ## Stationarity and Cointegration \label{Cointegrate}
 
-To test whether the series are stationary, three tests were employed: the Augmented Dickey-Fuller^[Based on the work by \citet* {dickey} | The '*urca*' package by \citet {urca} is used] (ADF) and Phillip-Perron^[Based on the work by \citet* {phillip} | The '*tseries*' package by \citet* {tseries} is used] (PP) unit root tests, and the Kwiatkowski–Phillips–Schmidt–Shin^[Based on the work by \citet* {kpss} | The '*tseries*' package by \citet* {tseries} is used] (KPSS) stationarity test. The results are presented in appendix \ref{appendixB}.
+To test whether the series are stationary, three tests were employed: the Augmented Dickey-Fuller^[Based on the work of \citet* {dickey}, using the '*urca*' package by \citet {urca}] (ADF) and Phillip-Perron^[Based on the work of \citet* {phillip} and using the '*tseries*' package by \citet* {tseries}] (PP) unit root tests, and the Kwiatkowski–Phillips–Schmidt–Shin^[Based on the work of \citet* {kpss}, using the '*tseries*' package by \citet* {tseries}] (KPSS) stationarity test. The results are presented in appendix \ref{appendixB}.
 
-The results of the ADF tests in table \ref{tab:adf} show that the log of cigarette consumption, log of the real price ratio, and log of real disposable income all contain a unit root since the null hypothesis cannot be rejected^[The null hypothesis for the ADF tests is that the series contain a unit root], even at a 10% signifiance level. The KPSS stationarity tests (\ref{tab:kpss}) confirm these results, where the null hypothesis of stationarity is rejected at a 1% level of signifiance for each series. The results of the PP tests are presented in table \ref{tab:pp}, which shows that the log of cigarette consumption does not contain a unit root at 1% significance level but that the other two series do contain unit roots.
+The results of the ADF tests in table \ref{tab:adf} show that the log of cigarette consumption, log of the real price ratio, and log of real disposable income all contain a unit root since the null hypothesis cannot be rejected, even at a 10% signifiance level. The KPSS stationarity tests (\ref{tab:kp}) confirm these results, where the null hypothesis of stationarity is rejected at a 1% level of signifiance for each series. The results of the PP tests are presented in table \ref{tab:pp}, which shows that the log of cigarette consumption does not contain a unit root at 1% significance level but that the other two series do contain unit roots.
 
 Given that there is a structural break point in the price ratio series, standard unit root testing may not be appropriate for this series. Consequently, the Zivot-Andrews Unit Root test is used as a robustness check for the stationarity of the price ratio. The results are presented in table \ref{tab:zivot} and show that the null of a unit root cannot be rejected, at even 10% level of significance. Thus confirming the original test results.
 
@@ -96,22 +96,62 @@ the Johansen Trace test for Cointegration, and the Johansen Maximum Eigenvalue t
 
 The Johansen Trace Test for Cointegration indicates that there is one cointegrating vector. As shown in table \ref{trace}, the test statistic of 80.8 is larger than 60.2 (the critical value at a 1% level of significance). Thus, the null hypothesis is rejected, where the null hypothesis is that there are zero cointegrating vectors. However, the test statistic 41 is lower than 41.1 (the critical value at a 1% level of significance). This means that the null hypothesis cannot be rejected even at a 1% signicance level, where the null hypothesis is that there is 1 or fewer cointegrating vectors. 
 
-The results of the Johansen Maximum Eigenvalue test are presented in table \ref{eigen}. Similar to the Trace test, the Maximum Eigenvalue test shows that there is a single cointegrating vector. The presence of a cointegrating vector indicates that a long-run relationship exist among the variables. A Vector Error Correction Model is used to combine the long and short-run dynamics. This model is specified and estimated in the following section (\ref{vecm}).
+The results of the Johansen Maximum Eigenvalue test are presented in table \ref{eigen}. Similar to the Trace test, the Maximum Eigenvalue test shows that there is a single cointegrating vector. Both cointegration tests were run with a lag length of 3, indicating that the appropriate number of lags to use in the Vector Error Correction Model is 2 lags. The presence of a cointegrating vector indicates that a long-run relationship exist among the variables. A Vector Error Correction Model is used to combine the long and short-run dynamics. This model is specified and estimated in the following section (\ref{vecm}).
 
 ## Vector Error Correction Model \label{vecm}
 
-The VECM was with 1 cointegrating vector and at lag length of 2. The results are presented in the appendix (\ref{appendixD}).
+The equation representing the long-run equilibrium model is a double-logarithmic demand equation, given by:
 
 \begin{align}
- Q_t = \mu + \sum_{i = 1}^{n}\beta_iQ_{t-i} +\sum_{i = 1}^{n}\gamma_iP_{t-i} + \sum_{i = 1}^{n}\theta_iY_{t-i} \label{eq1}
+ lnQ_t = \alpha_0 + \alpha_1lnP_t + \alpha_2lnY_t + \alpha_3lnD_t + \mu_t \label{eq1}
 \end{align}
 
-where $Q_t$ is the log of legal cigarette consumption,\newline
-$P_{t}$ is the log of real price ratio for cigarettes,\newline
-$Y_{t}$ is the log of real disposable income,\newline
-$n$ is the number of lags and $t$ is measured in months
+where $i = 0,1,2,3$,\newline
+$lnQ_t$ is the log of legal cigarette consumption,\newline
+$lnP_t$ is the log of real price ratio for cigarettes,\newline
+$lnY_t$ is the log of real disposable income,\newline
+$D_t$ is the dummy variable for the structural break \newline
+$\mu_t$ is the random error term, and $t$ is measured in months 
+
+The Vector Error Correction model specification is given by:
+
+\begin{align}
+ dLnQ_t = &\beta_0 + \beta_1\sum_{i = 1}^{n-1}dLnQ_{t-i} + \beta_2\sum_{i = 1}^{n-1}dLnP_{t-i} + \beta_3\sum_{i = 1}^{n-1}dLnY_{t-i}\\ 
+&+ \beta_4D_t + \lambda_iECT_{t-1} + \mu_t \label{eq2}
+\end{align}
+
+where $j - 1$ is the lag length, reduced by 1 due to the loss of a lag when differencing a Vector Autoregression (VAR),\newline
+$d$ is the difference operator,\newline
+$\beta_i$ represents model's short-run coefficients,\newline
+$\lambda_i$ is the speed of adjustment parameter,\newline
+$ECT_{t-1}$ is the error correction term, and \newline
+$\mu_t$ is the random error term, and $t$ is measured in months 
+
+# Analysis \label{analysis}
+
+The VECM was with 1 cointegrating vector and at lag length of 2. The results are presented in table the appendix (\ref{appendixD}). The
 
 The price ratio captures a relative change of the legal price compared to the illicit price. If the ratio shrinks, it indicates that the cost of legal cigarettes decreased relative to the cost of illicit cigarettes. There should be a negative long run relationship between the price ratio and the quantity of legal cigarettes. There should be a positive sign for the cointegrating relationship, which there is. The coefficient for the real disposable income variable should be negative for the long-run relationship (so that the reverse sign is positive); whereas the sign is positive in the Vecm results below.
+
+
+The VECM was estimated at lag length of 1 with 1 cointegrating vector, and the
+results are summarized in Table 2. 
+
+The demand equation for annual cigarette consumption obtained from the VECM and 2SLS estimations is reported in Ta- bles 2. Table 3 presents the rst stage estimates of the 2SLS method. Appendix
+6 shows estimated results of the demand equation using specic dummies for the
+existing legislative acts in South Africa. 
+
+The VECM uses stationary data at rst dierences and includes the lagged residuals of the long-run relationship as an explanatory variable. Coe¢ cients
+from ECM represent the relationship in the short run, and the coe¢ cient of the
+lagged residuals measures the speed of convergence to the long-run equilibrium.
+The error correction term is the speed of adjustment in the direction of long-
+term equilibrium after any deviation from the steady state. The error correction
+terms in Table 2 have the correct sign and are signicant. This indicates that
+per capita cigarette demand converges to steady state equilibrium at the speed
+of 15% in the restricted model (see column 1) and 26% in the unrestricted model
+(see column 2).
+The estimate
+
 
 
 If the real disposable income variable is excluded then the Vecm results are as follows. The coefficient for 
@@ -122,7 +162,6 @@ The results of the diagnostic tests are shown in Appendix \ref{appendixE}. Table
 
 Figure \ref{fig:residPlot} shows the residuals.
 
-# Analysis \label{analysis}
 # Conclusion \label{conclusion}
 
 
