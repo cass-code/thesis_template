@@ -22,20 +22,24 @@ vecm_data <- dsetYRdummy %>%
 
 # Introduction
 
-This study examines the relationship between the legal and illegal tobacco markets in South Africa. Section \ref{data} discusses the data used and how it was cleaned. Section \ref{methodology} explains the methodology, where a VECM model is presented. The final section details discussion points (\ref{analysis}). The appendix contains the full model outputs. 
+This study examines the long-run relationship between legal cigarette consumption and the relative price of legal and illicit cigarettes in South Africa. Between 1993 and 2010, South Africa took significant steps to address tobacco consumption (\citealp{gov}:2). The Tobacco Products Control Act (TPCA) 83 of 199 was introduced, along with a number of other important pieces of legislation. In addition, more substantial excise taxes on tobacco products were imposed during this period, leading to a significant decrease in smoking prevalence and smoking-related deaths (\citealp{gov}:2}. However, from 2010, there was a substantial change in the South African tobacco market. There was an influx of smaller cigarette manufacturers into a previously concentrated industry, leading to downward pressure on cigarette prices (\citealp *{tingum2020}:5). At the same time, the trade in illicit cigarettes picked up. Consequently, government and health officials became increasingly concerned with the tobacco market and its effect on tax revenue, illegal activities and public health. To address these concerns, it is important to understand the relationship between consumer behaviour and real and illicit cigarette prices, which is investigated in this study.
+
+The focus of this paper is the extent to which cigarette smokers change their long-run consumption of legal cigarettes in response to a change in the the *relative* real price of legal cigarettes. Several empirical studies have estimated the South African demand function for cigarettes^[See for example \citet* {mukong}; \citet{boshoff2008}; \citet{dare}], but few have accounted for illicit cigarette *prices* or use monthly observations in the models, which is predominantly due to data-sourcing issues. The present study addresses this gap. The findings show that the long-run elasticity for the relative real price of cigarettes ranges between -0.58 and -0.885, which demonstrates that the illicit tobacco market places a constraint on the legal market. Understanding the relationship between legal cigarette demand and illicit prices is useful for the discussion regarding the efficacy of health and taxation policies aimed at reducing cigarette consumption (\citealp*{tingum2020}:3). 
+
+The paper starts with a brief outline of the legal and illicit tobacco market in South Africa in section \ref{market}, followed by an overview of the theoretical model in section \ref{Model}. Section \ref{data} provides an extensive discussion of the dataset. An econometric approach is taken in this study, utilising several unit root tests, Johansen cointegation tests, a vector error correction model as well as a two stage least square estimation. The unit root and cointegration tests are discussed in section \ref{Cointegrate}, and the vector error correction model is presented in section \ref{vecm}. Following this, the results of the vector error correction model are analysed, and additional models are estimated and assessed (section \ref{analysis}). The final section (\ref{conclusion}) concludes.
 
 
-# The Illicit Tobacco Market
+# The Legal and Illicit Tobacco Market in South Africa \label{market}
 
 The health problems associated with tobacco consumption are significant and have been well-documented (\citealp *{tingum2020}:62). Worldwide, smoking is one of the leading causes of preventable deaths; and in South Africa 23% of the total deaths in 2018 were smoking-related (Statistics South Africa). Given the large and negative impact of smoking, the tobacco market has come under increasing scrutiny by governments and health organizations. A significant component of the tobacco market is the illicit cigarette trade, which the Financial Action Task Force (2012:7) defines as 
 
 > “*…the supply, distribution and sale of smuggled genuine, counterfeit or cheap white tobacco products.*”
 
 
-The illicit tobacco market gives rise to concern on three main fronts: public health, tax evasion, and criminal activity. From a public health perspective, illicit cigarettes make smoking more affordable and thereby increases tobacco access (\citealp* {vanderzee2019}:242). Cheaper cigarettes may induce non-smokers to smoke, increase the volume of cigarettes consumed by smokers, and decrease the likelihood that smokers will quit smoking (\citealp* {pechacek2018}:pagenumber; \citealp{vanderzee2019}:242).
+The illicit tobacco market gives rise to concern on three main fronts: public health, tax evasion, and criminal activity. From a public health perspective, illicit cigarettes make smoking more affordable and thereby increases tobacco access (\citealp* {vanderzee2019}:242). Cheaper cigarettes may induce non-smokers to smoke, increase the volume of cigarettes consumed by smokers, and decrease the likelihood that smokers will quit smoking (\citealp* {pechacek2017}:pagenumber; \citealp{vanderzee2019}:242).
 
 
-According to the International Agency for Research on Cancer, tobacco use is more prevalent among low socio-economic groups, and the poor are more sensitive to cigarette prices (IARC, 2011:276). Consequently, the health problems linked to smoking are disproportionately higher among the poor, which results in a greater burden on the public healthcare sector (). In South Africa, the healthcare costs associated with smoking amounted to R14.48 billion in 2016, which accounted for 4.1% of health spending (). In addition to the healthcare costs, there are indirect costs linked to smoking such as the loss of productive lives and loss of productive days due to illness (\citealp* {boachie2020}:pg). In 2016, the total cost of smoking to South Africa was R42.32 billion (0.97% of GDP).
+According to the International Agency for Research on Cancer (\citeyear{iarc2011}), tobacco use is more prevalent among low socio-economic groups, and the poor are more sensitive to cigarette prices (IARC, 2011:276). Consequently, the health problems linked to smoking are disproportionately higher among the poor, which results in a greater burden on the public healthcare sector (). In South Africa, the healthcare costs associated with smoking amounted to R14.48 billion in 2016, which accounted for 4.1% of health spending (). In addition to the healthcare costs, there are indirect costs linked to smoking such as the loss of productive lives and loss of productive days due to illness (\citealp* {boachie2020}:pg). In 2016, the total cost of smoking to South Africa was R42.32 billion (0.97% of GDP).
 
 
 Evidently, the public health and economic costs of tobacco use are extensive. In an effort to reduce tobacco use, many countries have implemented tax and price policies on tobacco products (Chaloupka, Straif, Leon). For a middle-income country, South Africa was considered to be at the forefront of tobacco control policies, including excise duties, for many years (\citealp* {vellios2022}). From a fiscal perspective, excise tax on cigarettes is a source of government revenue, which is undermined by the illicit tobacco industry.  **Blah ble** estimates the loss of income due to the illicit market to be R123123 The loss of income
@@ -49,7 +53,7 @@ This paper makes use of the demand model to estimate the effect of a relative pr
 Q_{t} = f(P_{t}, Y_{t}, D_{t}) \label{eqa}
 \end{align}
 
-\ref{eqa} Where $Q_{t}$ represents cigarette consumption volume in period $t$, $P_{t}$ is the price of cigarettes adjusted for inflation, $Y_{t}$ is disposable income, and $D_{t}$ is is the dummy variable for the change in market structure that occurred in 2018. 
+Where $Q_{t}$ represents cigarette consumption volume in period $t$, $P_{t}$ is the price of cigarettes adjusted for inflation, $Y_{t}$ is disposable income, and $D_{t}$ is is the dummy variable for the change in market structure that occurred in 2018. 
 
 Two sets of prices are used in this study; the first is the legal cigarette price, which is the price of cigarettes for which duties have been paid. The second is the illicit cigarette price, which is the price of cigarettes for which duties have been paid. For this study, cigarette consumption, as represented by $Q_{t}$, is the quantity of legal cigarettes consumed (cigarettes for which duties have been paid).
 
@@ -59,7 +63,7 @@ The sample period for this study runs from January 2012 to March 2020. Monthly d
 
 To prepare the legal price data for analysis, the most popular price category (MPPC) is identified as the 20-cigarette pack. A weighted average of before-tax 20-pack prices is used as a base price. The excise duty per 20's pack and VAT are then added to the base price to calculate the price of legal cigarettes. The legal and illicit prices, and disposable income values, are adjusted for inflation, taking December 2016 as the base month and year, respectively. For the statistical analysis in sections \ref{Cointegrate} and \ref{vecm}, all of the variables have been transformed into log form to reduce variability. 
 
-For the model specification, the two price series are combined to form a single price-ratio series. The price ratio is calculated as the real legal price divided by the real illicit cigarette price ($P_{legal}/P_{illicit}$). Consumer theory suggests that individuals base decisions on relative price changes rather than absolute price changes **ADD REFERENCES**. Thus, it makes intuitive sense to model the effect of a relative change in prices on the quantity of legal cigarettes
+For the model specification, the two price series are combined to form a single price-ratio series. The price ratio is calculated as the real legal price divided by the real illicit cigarette price ($P_{legal}/P_{illicit}$). Consumer theory suggests that individuals consider relative price differences between substitutes in addition to the absolute price of the good when making consumption decisions (\citealp{relative}:450). Thus, it makes intuitive sense to model the effect of a relative change in prices on the quantity of legal cigarettes. Gross national income is taken as a proxy for the disposable income of smokers.
 
 The series are plotted in levels in figure \ref{fig:plot} below. The general downwards trend of the graph depicting the real price of legal cigarettes suggests that inflation has been outstripping nominal cigarette prices. Real legal prices decreased slightly over the period 2012 - 2018. On the other hand, real prices for illicit cigarettes remained fairly constant from 2012 until late 2014. Following a small and sharp uptick, illicit prices slowly decreased from late 2014 until November 2018 when prices increase rapidly. The real price ratio is generally flat from 2012 - 2016, and then trends upwards slightly, implying that real legal prices were decreasing more slowly than real illicit prices were decreasing over the same period. There is a sudden drop in the price ratio in November 2018, reflecting the spike in real illicit prices. The graphs of the respective logged series (shown in appendix \ref{appendixLog}) illustrate similar patterns.
 
@@ -96,11 +100,11 @@ the Johansen Trace test for Cointegration, and the Johansen Maximum Eigenvalue t
 
 The Johansen Trace Test for Cointegration indicates that there is one cointegrating vector. As shown in table \ref{trace}, the test statistic of 80.8 is larger than 60.2 (the critical value at a 1% level of significance). Thus, the null hypothesis is rejected, where the null hypothesis is that there are zero cointegrating vectors. However, the test statistic 41 is lower than 41.1 (the critical value at a 1% level of significance). This means that the null hypothesis cannot be rejected even at a 1% signicance level, where the null hypothesis is that there is 1 or fewer cointegrating vectors. 
 
-The results of the Johansen Maximum Eigenvalue test are presented in table \ref{eigen}. Similar to the Trace test, the Maximum Eigenvalue test shows that there is a single cointegrating vector. Both cointegration tests were run with a lag length of 3, indicating that the appropriate number of lags to use in the Vector Error Correction Model is 2 lags. The presence of a cointegrating vector indicates that a long-run relationship exist among the variables. A Vector Error Correction Model is used to combine the long and short-run dynamics. This model is specified and estimated in the following section (\ref{vecm}).
+The results of the Johansen Maximum Eigenvalue test are presented in table \ref{eigen}. Similar to the Trace test, the Maximum Eigenvalue test shows that there is a single cointegrating vector. Both cointegration tests were run with a lag length of 3, indicating that the appropriate number of lags to use in the vector error correction model is 2 lags. The presence of a cointegrating vector indicates that a long-run relationship exist among the variables. A vector error correction model is used to combine the long and short-run dynamics. This model is specified and estimated in the following section (\ref{vecm}).
 
-## Vector Error Correction Model \label{vecm}
+## vector error correction model \label{vecm}
 
-The equation representing the long-run equilibrium model is a double-logarithmic demand equation, given by:
+The target variable in this model is the quantity of legal cigarettes consumed. The explanatory variables are the price ratio, disposable income, and the structural shift dummy. The equation representing the long-run equilibrium model is a double-logarithmic demand equation, given by:
 
 \begin{align}
  lnQ_t = \alpha_0 + \alpha_1lnP_t + \alpha_2lnY_t + \alpha_3lnD_t + \mu_t \label{eq1}
@@ -111,7 +115,7 @@ $lnQ_t$ is the log of legal cigarette consumption,\newline
 $lnP_t$ is the log of real price ratio for cigarettes,\newline
 $lnY_t$ is the log of real disposable income,\newline
 $D_t$ is the dummy variable for the structural break \newline
-$\mu_t$ is the random error term, and $t$ is measured in months 
+$\mu_t$ is the random error term
 
 The Vector Error Correction model specification is given by:
 
@@ -120,50 +124,39 @@ The Vector Error Correction model specification is given by:
 &+ \beta_4D_t + \lambda_iECT_{t-1} + \mu_t \label{eq2}
 \end{align}
 
-where $j - 1$ is the lag length, reduced by 1 due to the loss of a lag when differencing a Vector Autoregression (VAR),\newline
+where $n - 1$ is the lag length, reduced by 1 due to the loss of a lag when differencing a Vector Autoregression (VAR),\newline
 $d$ is the difference operator,\newline
 $\beta_i$ represents model's short-run coefficients,\newline
 $\lambda_i$ is the speed of adjustment parameter,\newline
 $ECT_{t-1}$ is the error correction term, and \newline
-$\mu_t$ is the random error term, and $t$ is measured in months 
+$\mu_t$ is the random error term
 
 # Analysis \label{analysis}
 
-The VECM was with 1 cointegrating vector and at lag length of 2. The results are presented in table the appendix (\ref{appendixD}). The
+The VECM uses stationary data at first differences, and is estimated with 1 cointegrating vector and at lag length of 2. The lagged residuals of the long-run relationship are used as an explanatory variable. The results of the model are reported in appendix \ref{appendixD}. The long run coefficients are summarised in table \ref{tab:Longvecm}, where the long run coefficient for the price ratio is 0.885. The positive coefficient sign demonstrates that there is a negative relationship between the number of legal cigarettes consumed and the price ratio. This makes intuitive sense: if the real price of legal cigarettes decreases at a greater rate than the real price of illicit cigarettes, the price ratio shrinks and legal cigarettes are relatively cheaper (than illicit cigarettes); if legal cigarettes are relatively cheaper, the theory of demand predicts that more legal cigarettes will be bought. 
 
-The price ratio captures a relative change of the legal price compared to the illicit price. If the ratio shrinks, it indicates that the cost of legal cigarettes decreased relative to the cost of illicit cigarettes. There should be a negative long run relationship between the price ratio and the quantity of legal cigarettes. There should be a positive sign for the cointegrating relationship, which there is. The coefficient for the real disposable income variable should be negative for the long-run relationship (so that the reverse sign is positive); whereas the sign is positive in the Vecm results below.
+Because the model is specified as a double logarithmic model, the long-run coefficients can effectively be interpreted as price and income elasticities. Thus, for a 10% decrease in the real price ratio, cigarette consumption increases by 8.9% in the long run, *ceteris paribus*. The relationship established in the model between legal cigarette quantity demanded and the price ratio demonstrates that the illicit tobacco market places a constraint on the legal market. The negative correlation in the long run between cigarette consumption and the price ratio shows that consumers buy fewer legal cigarettes when the price of illicit cigarettes decreases at a rate that's faster than a decrease in the legal cigarette price.
 
+The long run coefficient for real disposable income is -0.679. The negative coefficient sign signifies that there is a positive, long-run relationship between cigarette consumption and real disposable income, which is consistent with economic theory **REFERENCE**. In the long run, a 10% increase in real disposable income will lead to a 6.8% increase in cigarette consumption, *ceteris paribus*. The model indicates that real prices have a stronger effect on legal cigarette consumption than income does.
 
-The VECM was estimated at lag length of 1 with 1 cointegrating vector, and the
-results are summarized in Table 2. 
+The coefficients of the error correction term (ECT), set out in table \ref{tab:Shortvecm}, measure the speed of convergence to the long run equilibrium. These adjustment coefficients all lie between -1 and 0, with the coefficients for price and quantity being statistically significant. For quantity, the previous month's deviation from long -run equilibrium is corrected in the current month at an adjustment speed of 48.8%. The price ratio converges to steady state equilibrium more slowly at a speed of 14.9%.
 
-The demand equation for annual cigarette consumption obtained from the VECM and 2SLS estimations is reported in Ta- bles 2. Table 3 presents the rst stage estimates of the 2SLS method. Appendix
-6 shows estimated results of the demand equation using specic dummies for the
-existing legislative acts in South Africa. 
+The post-estimation diagnostics^[The diagnostic tests were run in R using the package '*vars*' by \citealp{vars}.] of the VECM model are presented in appendix \ref{appendixE}. The Portmanteau test with asymptotic critical values shows there is serial correlation amongst the errors when testing at 15 lags but no serial correlation when using 30 lags (see table \ref{tab:serial}). This is problematic as failing the test at 15 lags reduces the reliability of the t-statistics of the model. The ARCH test indicates that the residuals exhibit no conditional heteroscedasticity (see table \ref{tab:arch}). Lastly, the Jarque–Bera test for normality shows that the residuals are not normally distributed, which is similar for the individuals series as seen in the residual graphs in figure \ref{fig:residPlot}. The residuals not being normally distributed may indicate bias in the estimation of the coefficients. The results of the diagnostic tests could be due to
 
-The VECM uses stationary data at rst dierences and includes the lagged residuals of the long-run relationship as an explanatory variable. Coe¢ cients
-from ECM represent the relationship in the short run, and the coe¢ cient of the
-lagged residuals measures the speed of convergence to the long-run equilibrium.
-The error correction term is the speed of adjustment in the direction of long-
-term equilibrium after any deviation from the steady state. The error correction
-terms in Table 2 have the correct sign and are signicant. This indicates that
-per capita cigarette demand converges to steady state equilibrium at the speed
-of 15% in the restricted model (see column 1) and 26% in the unrestricted model
-(see column 2).
-The estimate
+## Additional models
 
+Three additional models are estimated to measure the price ratio elasticity in addition to the main VECM model. Given that the supply and demand for cigarettes jointly determine cigarette prices (\citealp* {viet}:7), there may be price endogeneity in the main VECM model. A lower cigarette price increases demand for cigarettes; however, a high cigarette demand will later result in higher cigarette prices. To address this possible endogeneity bias (\citealp{deaton}), two specifications of a two-stage least regression (2SLS) model^[The regressions were run in R using the package *'ivreg'* by \citealp* {ivreg}.] are presented in table \ref{tab:sls}. 
 
+Both 2SLS models employ the lag of the price ratio as an instrument variable for determining the real price ratio. The lag of the price ratio affects consumer behaviour but is independent of an individual's decision to smoke (\citealp{tingum2020}:6). The first 2SLS model ('Model 1') includes cigarette consumption of legal cigarettes as the dependent variable, and the real price ratio (instrumented by its lag), real disposable income and the structural change dummy as the explanatory variable. Table \ref{tab:sls} shows that the real price ratio is significant and has a coefficient of -0.58. Similar to the main VECM model, this coefficient can be interpreted as an elasticity. Thus for a 10% decrease in the price ratio, legal cigarette consumption increases by 5.8%. This is slightly lower than the 8.9% suggested in the main VECM model. The coefficient for real disposable income is not statistical significant, and also has a negative sign, which is counterintuitive. This could be caused by issues with employing gross national income as a proxy for disposable income.
 
-If the real disposable income variable is excluded then the Vecm results are as follows. The coefficient for 
+The second 2SLS model ('Model 2') excludes real disposable income as an explanatory variable. The coefficient for the real price ratio is given as -0.771, which has the correct sign and is statistically significant. Without controlling for the influence of disposable income, the elasticity for the price ratio has increased. This model suggests that a 10% decrease in the relative price of legal and illicit cigarettes results in a 7.7% increase in legal cigarette consumption.
 
-The previous month's deviation from the long run equilibrium is corrected at a speed of
-
-The results of the diagnostic tests are shown in Appendix \ref{appendixE}. Table \ref{tab:serial} shows the results of the serial autocorrelation test. Table \ref{tab:arch} shows the arch results. Table \ref{tab:normal} shows the normal results.
-
-Figure \ref{fig:residPlot} shows the residuals.
+The third model is another VECM, which only includes the real price ratio and the structural dummy as explanatory variables. The model is estimated with 1 cointegrating vector and at lag length of 1. The results are summarised in tables \ref{tab:smallLong} and \ref{tab:smallShort}. The long-run cointegrating vector suggests the price ratio elasticity is -0.798, which is slightly lower than the main VECM value of -0.885. The error correction terms have the correct signs and are statistically significant for cigarette consumption and the price ratio, demonstrating that the short-run deviations from the long-run equilibrium are corrected. The post-estimation tests - reported in tables \ref{tab:serial1}, \ref{tab:arch1}, and \ref{tab:normal} - indicate the presence of serial correlation, and normality of residuals. 
 
 # Conclusion \label{conclusion}
 
+This paper evaluates the relationship between legal cigarette consumption and the relative price of legal and illicit cigarettes in South Africa. The results of the vector error correction model demonstrate that the illicit cigarette price imposes a constraint on the legal cigarette market. The estimates of the long-run elasticity for the relative real price of cigarettes range between -0.58 and -0.885. This suggests that a 10% increase in the relative real price is associated with a decrease in legal cigarette consumption of 5.8% - 8.9%. The main VECM findings are consistent with economic theory and literature that cigarette consumption is negatively correlated with price and positively correlated with disposable income (\citealp{tingum2020}:8). The relative price elasticity is between -1 and 0, indicating that even after accounting for illicit prices, legal cigarettes are an inelastic good, which is also in line with theoretical expectations (\citealp{dare}:2).  
 
+The results of the study show that the decision to buy legal cigarettes is not only influenced by the price of legal cigarettes and disposable income, but also by the price of illicit cigarettes. If the price of illicit cigarettes decreases at a faster rate than the price of legal cigarettes, there is a decrease in legal cigarette consumption. This suggests that some consumers are willing to substitute legal cigarettes with illicit products, if the relative price of illicit cigarettes decreases. This has implications for health policymakers who are interested reducing cigarette consumption: if an excise tax is increased for cigarettes, all else remaining constant, the price of legal cigarettes will increase relative to illicit cigarettes and become comparatively less attractive. There will be a decrease in legal cigarette consumption (as intended), but some consumers will switch to purchasing illicit tobacco products, thereby reducing the efficacy of the policy. As raised by \citeauthor{boshoff2008} (\citeyear{boshoff2008}:130) and \citeauthor{tingum2020} (\citeyear{tingum2020}:9), health awareness and non-price policies are important tools for reducing smoking, without distorting the relative prices of legal and illicit cigarettes. In addition, the curtailment of the legal tobacco market due to illicit cigarettes undermines the fiscal regime. The government loses revenue from tobacco excise duties when consumers switch from buying legal cigarettes to illicit products.
 
-
+This study highlights that both legal and illicit cigarette prices affect the demand for legal cigarettes, which should be taken into account when setting health and tax policies in the South African tobacco market.

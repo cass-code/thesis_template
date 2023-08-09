@@ -622,10 +622,10 @@ Price_ratio <- vecm_sum[[2]]
 Real_Income <- vecm_sum[[3]]
 Structural_change <- vecm_sum[[4]]
 
-aa <- huxreg(list( "Quantity Cigarettes" = Quantity_Cigarettes, "Price ratio" = Price_ratio, "Real income" = Real_Income, "Structural Change" = Structural_change), coefs = c("ECT"= "ect1", "Cigarette Quantity (lag 1)" ="log_QDP.dl1", "Price ratio (lag 1)" =  "log_PRATIO.dl1", "Real Income (lag 1)" =  "log_YR.dl1", "Structural change (lag 1)" =  "dummy.dl1",  "Cigarette Quantity (lag 2)" =  "log_QDP.dl2", "Price ratio (lag 2)" =  "log_PRATIO.dl2","Real Income (lag 1)" =  "log_YR.dl2", "Structural change (lag 2)" =  "dummy.dl2"), names = c("Quantity Cigarettes", "Price ratio", "Real income", "Structural change"))
+aa <- huxreg(list( "dQuantity Cigarettes" = Quantity_Cigarettes, "dPrice ratio" = Price_ratio, "dReal income" = Real_Income, "dStructural Change" = Structural_change), coefs = c("ECT"= "ect1", "Quantity Cigarettes (dl1)" = "log_QDP.dl1", "Price ratio (dl1)" =  "log_PRATIO.dl1", "Real Income (dl1)" =  "log_YR.dl1", "Structural change (dl1)" =  "dummy.dl1",  "Quantity Cigarettes (dl2)" =  "log_QDP.dl2", "Price ratio (dl2)" =  "log_PRATIO.dl2","Real Income (dl2)" =  "log_YR.dl2", "Structural change (dl2)" =  "dummy.dl2"), names = c("Quantity Cigarettes", "Price ratio", "Real income", "Structural change"))
 library(dplyr)
 aa %>% 
-   set_caption("Vector Error Correction Model Short run \\label{tab:Shortvecm}")
+   set_caption("Vector Error Correction Model Short Run \\label{tab:Shortvecm}")
 ```
 
 # Diagnostic Tests \label{appendixE}
@@ -637,7 +637,7 @@ resid_plot(dsetYRdummy)
 
 ```{r diagnostics, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
 source("code/resid_test.R")
-listTests <- resid_test(dsetYRdummy)
+listTests <- resid_test(dsetYRdummy, 3)
 
 #Serial
 serial <- as.data.frame(listTests[[1]]) 
@@ -654,7 +654,7 @@ as_hux() %>%
   set_top_border(., row = 1, col = 2-3) %>% 
   set_bottom_border(., row =3, col = everywhere) %>%
   set_align(1-2-3-4, everywhere, "left") %>% 
-  set_caption("Autocorrelation Test\\label{tab:serial}") %>% 
+  set_caption("Portmanteau test\\label{tab:serial}") %>% 
   set_all_padding(2) %>% 
   set_outer_padding(3)
 
@@ -692,9 +692,131 @@ as_hux() %>%
   set_top_border(., row = 1, col = 2-3) %>% 
   set_bottom_border(., row =2, col = everywhere) %>%
   set_align(1-2-3-4, everywhere, "left") %>% 
-  set_caption("Normality test\\label{tab:normal}") %>% 
+  set_caption("Jarque–Bera normality test\\label{tab:normal}") %>% 
   set_all_padding(2) %>% 
   set_outer_padding(3)
 ```
 
+# Additional models \label{appendixE}
 
+```{r twoSLStab, fig.height = 6, echo=FALSE, warning=FALSE, message=FALSE, fig.cap = "Plot of residuals  \\label{fig:residPlot}"}
+source("code/twoSLS.R")
+twolist <- twoSLS(dsetYRdummyLagEx)
+two1 <- twolist[[1]]
+two2 <- twolist[[2]]
+
+bb<- huxreg("Model 1" = two1, "Model 2" = two2, statistics = c("N. obs." = "98")
+)
+bb %>% 
+   set_caption("2SLS regression results \\label{tab:sls}")
+```
+ \
+ 
+```{r vecmFinalSmall, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+source("code/vecm_final_short.R")
+
+vecm_output1 <- vecm_final_short(dsetYRdummy)
+#print(vecm_output)
+vecm_sum <- summary(vecm_output1$rlm)
+vecm_sum_beta <- vecm_output1$beta
+vecm_sum_beta <- as.data.frame(vecm_sum_beta)
+vecm_sum_beta <- vecm_sum_beta %>% rename("Long run coefficient" = "ect1")
+rownames(vecm_sum_beta) <- c("Quantity cigarettes", "Price ratio", "Structural change", "Constant")
+
+library(huxtable)
+vecm_sum_beta %>%
+as_hux(add_colnames = FALSE) %>%
+  add_colnames(" ", "Long run coefficient") %>%
+  add_rownames("Quantity Cigarettes" = "log_QDP.l3") %>% 
+  style_headers(., bold = TRUE) %>%
+  set_header_rows(FALSE) %>% 
+  set_header_cols(FALSE) %>% 
+  set_font_size(12) %>% 
+  set_col_width(1, 3) %>% 
+  set_bottom_border(., row = 1, col = 2) %>% 
+  set_top_border(., row = 2, col = 2) %>% 
+  set_bottom_border(., row = 5, col = everywhere) %>% 
+  # set_align(1-2-3-4, everywhere, "left") %>% 
+  set_caption("Vector Error Correction Model \\label{tab:smallLong}") %>% 
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+
+#name columns for huxreg
+Quantity_Cigarettes <- vecm_sum[[1]]
+Price_ratio <- vecm_sum[[2]]                        
+Structural_change <- vecm_sum[[3]]
+
+aa <- huxreg(list( "dQuantity Cigarettes" = Quantity_Cigarettes, "dPrice ratio" = Price_ratio, "dStructural Change" = Structural_change), coefs = c("ECT"= "ect1", "Quantity Cigarettes (dl1)" = "log_QDP.dl1", "Price ratio (dl1)" =  "log_PRATIO.dl1", "Structural change (dl1)" =  "dummy.dl1"), names = c("Quantity Cigarettes", "Price ratio", "Structural change"))
+library(dplyr)
+aa %>% 
+   set_caption("Vector Error Correction Model Short Run \\label{tab:smallShort}")
+```
+
+\
+\
+
+
+```{r diagnosticsVecm2, comment=NA, echo=FALSE, warning=FALSE, message=FALSE}
+library(dplyr)
+source("code/resid_test.R")
+dsettrim <- dsetYRdummy
+dsettrim <- dsettrim %>% dplyr::select(log_QDP, log_PRATIO, dummy)
+listTests <- resid_test(dsettrim, 2)
+
+#Serial
+serial <- as.data.frame(listTests[[1]]) 
+library(huxtable)
+serial %>%
+as_hux() %>%
+  #add_rownames("Quantity Cigarettes" = "log_QDP.l3") %>% 
+  style_headers(., bold = TRUE) %>%
+  set_header_rows(FALSE) %>% 
+  set_header_cols(FALSE) %>% 
+  set_font_size(12) %>% 
+  set_col_width(1, 3) %>% 
+  set_bottom_border(., row = 1, col =2-3) %>% 
+  set_top_border(., row = 1, col = 2-3) %>% 
+  set_bottom_border(., row =3, col = everywhere) %>%
+  set_align(1-2-3-4, everywhere, "left") %>% 
+  set_caption("Portmanteau test\\label{tab:serial1}") %>% 
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+
+#ARCH
+ARCH <- as.data.frame(listTests[[2]]) 
+library(huxtable)
+ARCH %>%
+as_hux() %>%
+  style_headers(., bold = TRUE) %>%
+  set_header_rows(FALSE) %>% 
+  set_header_cols(FALSE) %>% 
+  set_number_format(NA) %>% 
+  set_font_size(12) %>% 
+  set_col_width(1, 3) %>% 
+  set_bottom_border(., row = 1, col =2-3) %>% 
+  set_top_border(., row = 1, col = 2-3) %>% 
+  set_bottom_border(., row =2, col = everywhere) %>%
+  set_align(1-2-3-4, everywhere, "left") %>% 
+  set_caption("ARCH test\\label{tab:arch1}") %>% 
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+
+#Normality
+normal <- as.data.frame(listTests[[3]]) 
+library(huxtable)
+normal %>%
+as_hux() %>%
+  style_headers(., bold = TRUE) %>%
+  set_header_rows(FALSE) %>% 
+  set_header_cols(FALSE) %>% 
+  set_number_format(NA) %>% 
+  set_font_size(12) %>% 
+  set_col_width(1, 3) %>% 
+  set_bottom_border(., row = 1, col =2-3) %>% 
+  set_top_border(., row = 1, col = 2-3) %>% 
+  set_bottom_border(., row =2, col = everywhere) %>%
+  set_align(1-2-3-4, everywhere, "left") %>% 
+  set_caption("Jarque–Bera normality test\\label{tab:normal1}") %>% 
+  set_all_padding(2) %>% 
+  set_outer_padding(3)
+```

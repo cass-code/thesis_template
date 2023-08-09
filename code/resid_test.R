@@ -1,4 +1,4 @@
-resid_test <- function(dsetYRdummy){
+resid_test <- function(dsetYRdummy, m){
 
 library(urca)
 library(vars)
@@ -6,9 +6,13 @@ library(tsDyn)
 library(forecast)
 library(dplyr)
 
-cointest1 <- ca.jo(dsetYRdummy, K=3, type = "eigen", ecdet = "const", spec = "longrun")
+cointest1 <- ca.jo(dsetYRdummy, K=m, type = "eigen", ecdet = "const", spec = "longrun")
 vecmYRdummy1 <- cajorls(cointest1)
 model1Var <-vec2var(cointest1, r=1)
+
+# 
+# roots(eigen((model1Var$A$A1)))
+# eigen(model1Var$A$A1)
 
 #autocorreclation
 serialTest30 <- serial.test(model1Var, lags.pt = 30, type="PT.asymptotic")
